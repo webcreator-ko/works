@@ -1,0 +1,49 @@
+@import "@/styles/index";
+
+.wrap {
+ width: 100%;
+ position: sticky;
+ top: 0;
+ overflow: hidden;
+ z-index: 100;
+
+ h1 {
+  height: 0;
+  color: var(--white-color);
+  text-align: center;
+  font-size: 16px;
+  transform: translateY(-100px);
+  transition: 0.5s;
+  font-family: var(--font-pacifico);
+
+  &.on {
+   height: auto;
+   padding: 20px 0 0;
+   transform: translateY(0);
+  }
+ }
+
+ ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 0;
+
+  @include mq-down(md) {
+   gap: get_vw(40);
+   padding: get_vw(20) 0;
+  }
+
+  li {
+   font-size: 16px;
+
+   @include mq-down(md) {
+    font-size: get_vw(16);
+   }
+
+   a {
+    color: var(--white-color);
+   }
+  }
+ }
+}
