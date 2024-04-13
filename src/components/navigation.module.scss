@@ -16,10 +16,18 @@
   transition: 0.5s;
   font-family: var(--font-pacifico);
 
+  @include mq-down(md) {
+   font-size: get_vw(16);
+  }
+
   &.on {
    height: auto;
    padding: 20px 0 0;
    transform: translateY(0);
+
+   @include mq-down(md) {
+    padding: get_vw(20) 0 0;
+   }
   }
  }
 
@@ -31,7 +39,7 @@
 
   @include mq-down(md) {
    gap: get_vw(40);
-   padding: get_vw(20) 0;
+   padding: get_vw(30) 0;
   }
 
   li {
