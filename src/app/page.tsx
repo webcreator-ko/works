@@ -1,12 +1,15 @@
-import Header from "@/components/header";
-import Navigation from "@/components/navigation";
+import Articles from "@/components/pages/Articles";
 import pageStyles from "./page.module.scss";
+import ClientArticles from "@/components/pages/ClientArticles";
 
 export default function Home() {
  return (
   <main className={pageStyles.wrap}>
-   <Header />
-   <Navigation />
+   <div className={pageStyles.left}>
+    <Articles linkType="articles" />
+    <ClientArticles linkType="articles" />
+   </div>
+   <div className={pageStyles.right}></div>
   </main>
  );
 }

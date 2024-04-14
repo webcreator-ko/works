@@ -1,5 +1,5 @@
 "use client";
-import navigationStyles from "@/components/navigation.module.scss";
+import navigationStyles from "./navigation.module.scss";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 

@@ -1,0 +1,55 @@
+@import "@/styles/index";
+
+.wrap {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ color: var(--white-color);
+ background: var(--aside-bg-color);
+ border-radius: 20px;
+ padding: 30px;
+ margin-top: 40px;
+ box-sizing: border-box;
+
+ @include mq-down(md) {
+  padding: get_vw(20);
+  margin-top: 0;
+  transition: 0.5s;
+  transform: translateY(get_vw(200));
+
+  &.on {
+   transform: translateY(0);
+  }
+ }
+
+ input {
+  width: 100%;
+  height: 20px;
+  padding: 5px;
+  font-size: 14px;
+
+  @include mq-down(md) {
+   height: get_vw(20);
+   padding: get_vw(5);
+   font-size: get_vw(14);
+  }
+ }
+
+ button {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white-color);
+  background: var(--blue-color);
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin-top: 20px;
+
+  @include mq-down(md) {
+   font-size: get_vw(14);
+   padding: get_vw(10) get_vw(15);
+   margin-top: get_vw(20);
+  }
+ }
+}

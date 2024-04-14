@@ -1,5 +1,5 @@
 import React from "react";
-import headerStyles from "@/components/header.module.scss";
+import headerStyles from "./header.module.scss";
 import { getImageProps } from "next/image";
 
 function getBackgroundImage(srcSet = "") {

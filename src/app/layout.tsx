@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "@/app/globals.scss";
 import { Pacifico } from "next/font/google";
+import Header from "@/components/pages/header";
+import Navigation from "@/components/pages/navigation";
 
 export const metadata: Metadata = {
  title: {
@@ -40,7 +42,11 @@ export default function RootLayout({
 }>) {
  return (
   <html lang="ja" className={`${pacifico.variable}`}>
-   <body>{children}</body>
+   <body>
+    <Header />
+    <Navigation />
+    {children}
+   </body>
   </html>
  );
 }
