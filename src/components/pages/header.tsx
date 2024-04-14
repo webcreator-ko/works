@@ -25,7 +25,7 @@ const Header = () => {
  const backgroundImage = getBackgroundImage(srcSet);
 
  return (
-  <header className={headerStyles.wrap} style={{ backgroundImage }}>
+  <header className={headerStyles.wrap} style={{ backgroundImage }} id="header">
    <h1>
     WEB CREATOR
     <br />

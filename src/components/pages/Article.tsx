@@ -9,11 +9,19 @@ type Props = {
  id: number;
  title: string;
  content: string;
+ imageSrc: string;
  date: string;
  contentMaxLength?: number;
 };
 
-const Article = ({ id, title, content, date, contentMaxLength = 0 }: Props) => {
+const Article = ({
+ id,
+ title,
+ content,
+ imageSrc,
+ date,
+ contentMaxLength = 0,
+}: Props) => {
  return (
   <article className={articleStyles.wrap}>
    <Link href={`/articles/${id}`}>
@@ -27,7 +35,16 @@ const Article = ({ id, title, content, date, contentMaxLength = 0 }: Props) => {
          : content,
       }}
      />
-     <Image src="/ogp.png" width={520} height={273} alt="" />
+     <div className={articleStyles.image}>
+      <Image
+       src={imageSrc}
+       width={0}
+       height={0}
+       sizes="100vw"
+       priority={true}
+       alt=""
+      />
+     </div>
     </hgroup>
    </Link>
    <ShareList

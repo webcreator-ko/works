@@ -10,7 +10,12 @@ const Navigation = () => {
   const handleScroll = () => {
    if (navRef.current) {
     const navRect = navRef.current?.getBoundingClientRect();
-    if (!navRect.top) {
+    const headerRect = document
+     .getElementById("header")
+     ?.getBoundingClientRect();
+    if (!headerRect) return;
+
+    if (navRect.top <= 0 && headerRect.bottom < 0) {
      setDisplay(true);
     } else {
      setDisplay(false);
@@ -24,8 +29,14 @@ const Navigation = () => {
    window.removeEventListener("scroll", handleScroll);
   };
  }, []);
+
  return (
-  <nav className={navigationStyles.wrap} ref={navRef}>
+  <nav
+   className={`${navigationStyles.wrap} ${
+    isDisplay ? navigationStyles.fixed : undefined
+   }`}
+   ref={navRef}
+  >
    <h1 className={isDisplay ? navigationStyles.on : undefined}>
     WEB CREATOR - KO
    </h1>

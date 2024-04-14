@@ -13,7 +13,7 @@ export async function getArticles({ offset, excludeId }: ArticlesProps) {
  try {
   const data = await fetchComWP<ArticleType[]>({
    method: FetchType.Get,
-   endpoint: `/posts?per_page=${DEFAULT_IMPORT_ARTICLES_COUNT}&offset=${offset}&exclude=${excludeId}&_fields=id,date,title,content,category_name,category_id`,
+   endpoint: `/posts?per_page=${DEFAULT_IMPORT_ARTICLES_COUNT}&offset=${offset}&exclude=${excludeId}&_fields=id,date,title,content,x_featured_media_large,category_name,category_id`,
   });
 
   return data;

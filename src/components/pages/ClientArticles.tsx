@@ -98,6 +98,7 @@ const ClientArticles = ({
         id={e.id}
         date={e.date}
         title={e.title.rendered}
+        imageSrc={e.x_featured_media_large}
         content={e.content.rendered}
         contentMaxLength={contentMaxLength}
        />
