@@ -21,7 +21,7 @@ const Articles = async ({
  excludeId = 0,
  categoryId,
  searchText,
- contentMaxLength = 60,
+ contentMaxLength = 250,
 }: Props) => {
  let data: ArticleType[] = [];
 

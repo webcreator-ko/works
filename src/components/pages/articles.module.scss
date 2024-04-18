@@ -4,13 +4,13 @@
  width: 100%;
 
  > li {
-  padding: 20px 12px;
+  padding-top: 40px;
   box-sizing: border-box;
   border-left: solid 1px var(--article-border-color);
   border-right: solid 1px var(--article-border-color);
 
   @include mq-down(md) {
-   padding: get_vw(20) get_vw(16) get_vw(20) get_vw(12);
+   padding-top: get_vw(30);
   }
 
   & ~ li {

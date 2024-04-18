@@ -11,7 +11,7 @@ export const metadata: Metadata = {
  },
  description:
   "Kotaro from WEB CREATOR is a site where he posts his blog and portfolio, and is currently seeking work opportunities through inquiries!",
- metadataBase: new URL(process.env.SITE_URL!),
+ metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
  openGraph: {
   url: "/",
   images: "/images/ogp.png",

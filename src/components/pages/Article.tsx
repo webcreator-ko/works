@@ -4,6 +4,7 @@ import Image from "next/image";
 import articleStyles from "./article.module.scss";
 import { formatterDate } from "@/libs/dayjs";
 import ShareList from "./ShareList";
+import { decode } from "html-entities";
 
 type Props = {
  id: number;
@@ -47,10 +48,11 @@ const Article = ({
      </div>
     </hgroup>
    </Link>
+   <time dateTime={date}>{formatterDate(date)}</time>
    <ShareList
-    title={title}
-    url={`${process.env.SITE_URL}/articles/${id}`}
-    hashTags={["gptTrends"]}
+    title={decode(title)}
+    url={`${process.env.NEXT_PUBLIC_SITE_URL}/articles/${id}`}
+    hashTags={["WebCreator_KO"]}
     size={30}
    />
   </article>

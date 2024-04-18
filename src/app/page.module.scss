@@ -6,7 +6,15 @@
  box-sizing: border-box;
  margin: 0 auto;
 
+ @include mq-down(md) {
+  padding: 0 get_vw(20);
+ }
+
  .left {
   width: 60%;
+
+  @include mq-down(md) {
+   width: 100%;
+  }
  }
 }

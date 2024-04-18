@@ -27,7 +27,7 @@ const ClientArticles = ({
  excludeId = 0,
  categoryId,
  searchText,
- contentMaxLength = 60,
+ contentMaxLength = 250,
 }: Props) => {
  const [data, setData] = useState<ArticleType[]>([]);
  const [isLoading, setLoading] = useState(false);

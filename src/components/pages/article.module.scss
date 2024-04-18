@@ -5,7 +5,12 @@
  padding: 20px;
  border-radius: 20px;
 
+ @include mq-down(md) {
+  padding: get_vw(20);
+ }
+
  > a {
+  width: 100%;
   display: flex;
   gap: 10px;
   color: var(--white-color);
@@ -17,10 +22,6 @@
  }
 
  hgroup {
-  @include mq-down(md) {
-   width: calc(100% - get_vw(50));
-  }
-
   h1,
   p {
    text-align: left;
@@ -33,13 +34,12 @@
    font-weight: 600;
 
    @include mq-down(md) {
-    font-size: get_vw(18);
-    line-height: get_vw(40);
+    font-size: get_vw(17);
    }
   }
 
   p {
-   font-size: 14px;
+   font-size: 17px;
    line-height: 1.6;
    padding-top: 10px;
    display: -webkit-box;
@@ -50,7 +50,7 @@
    flex: 1;
 
    @include mq-down(md) {
-    font-size: get_vw(12);
+    font-size: get_vw(14);
     padding-top: get_vw(10);
    }
   }
@@ -62,18 +62,31 @@
    margin-top: 10px;
    position: relative;
 
+   @include mq-down(md) {
+    width: 100%;
+    height: get_vw(150);
+    margin-top: get_vw(10);
+   }
+
    img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
    }
+  }
+ }
 
-   @include mq-down(md) {
-    width: 100%;
-    height: get_vw(157);
-    margin-top: get_vw(10);
-   }
+ time {
+  display: block;
+  font-size: 14px;
+  color: var(--white-color);
+  text-align: right;
+  padding-top: 20px;
+
+  @include mq-down(md) {
+   font-size: get_vw(12);
+   padding-top: get_vw(20);
   }
  }
 }
