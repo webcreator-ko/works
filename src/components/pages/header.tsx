@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import headerStyles from "./header.module.scss";
 import { getImageProps } from "next/image";
+import { usePathname } from "next/navigation";
 
 function getBackgroundImage(srcSet = "") {
  const imageSet = srcSet
@@ -23,6 +25,18 @@ const Header = () => {
   src: "/fukuoka.png",
  });
  const backgroundImage = getBackgroundImage(srcSet);
+ const pathName = usePathname();
+
+ let name = "404";
+ if (pathName === "/") {
+  name = "Diary";
+ } else if (pathName === "/works") {
+  name = "Works";
+ } else if (pathName === "/gallery") {
+  name = "Gallery";
+ } else if (pathName === "/contact") {
+  name = "Contact";
+ }
 
  return (
   <header className={headerStyles.wrap} style={{ backgroundImage }} id="header">
@@ -32,7 +46,7 @@ const Header = () => {
     KO
    </h1>
    <h2 className={headerStyles.leftFixed} data-text="Portfolio">
-    Portfolio
+    {name}
    </h2>
    <div className={headerStyles.rect} />
   </header>

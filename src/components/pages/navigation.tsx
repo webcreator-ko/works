@@ -38,7 +38,7 @@ const Navigation = () => {
    ref={navRef}
   >
    <h1 className={isDisplay ? navigationStyles.on : undefined}>
-    WEB CREATOR - KO
+    <Link href="/">WEB CREATOR - KO</Link>
    </h1>
    <ul>
     <li>

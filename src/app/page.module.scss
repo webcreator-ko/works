@@ -8,7 +8,7 @@
  margin: 0 auto;
 
  @include mq-down(md) {
-  flex-direction: column-reverse;
+  flex-direction: column;
   padding: 0 get_vw(20);
  }
 

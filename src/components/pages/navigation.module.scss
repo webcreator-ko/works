@@ -22,6 +22,10 @@
   transition: 0.5s;
   font-family: var(--font-pacifico);
 
+  a {
+   color: var(--white-color);
+  }
+
   @include mq-down(md) {
    font-size: get_vw(16);
   }

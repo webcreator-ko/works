@@ -1,10 +1,11 @@
 @import "@/styles/index";
 
-.profile {
+.wrap {
  border: 1px solid var(--white-color);
  padding: 20px;
  border-radius: 20px;
  box-sizing: border-box;
+ box-shadow: 0px 2px 10px var(--white-color);
 
  @include mq-down(md) {
   padding: get_vw(20);
