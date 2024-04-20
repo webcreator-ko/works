@@ -1,12 +1,14 @@
 @import "@/styles/index";
 
 .wrap {
+ display: flex;
  max-width: 1200px;
  padding: 0 20px;
  box-sizing: border-box;
  margin: 0 auto;
 
  @include mq-down(md) {
+  flex-direction: column-reverse;
   padding: 0 get_vw(20);
  }
 
@@ -14,6 +16,17 @@
   width: 60%;
 
   @include mq-down(md) {
+   width: 100%;
+  }
+ }
+
+ .right {
+  width: 40%;
+  padding: 40px 0 0 50px;
+  box-sizing: border-box;
+
+  @include mq-down(md) {
+   padding: get_vw(20) 0 0;
    width: 100%;
   }
  }

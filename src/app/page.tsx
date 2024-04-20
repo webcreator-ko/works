@@ -1,6 +1,7 @@
 import Articles from "@/components/pages/Articles";
 import pageStyles from "./page.module.scss";
 import ClientArticles from "@/components/pages/ClientArticles";
+import SideBar from "@/components/pages/Sidebar";
 
 export default function Home() {
  return (
@@ -9,7 +10,9 @@ export default function Home() {
     <Articles linkType="articles" />
     <ClientArticles linkType="articles" />
    </div>
-   <div className={pageStyles.right}></div>
+   <div className={pageStyles.right}>
+    <SideBar />
+   </div>
   </main>
  );
 }

@@ -1,36 +1,45 @@
 @import "@/styles/index";
 
-.wrap {
- width: 300px;
+.profile {
+ border: 1px solid var(--white-color);
+ padding: 20px;
+ border-radius: 20px;
  box-sizing: border-box;
- position: fixed;
- right: calc(50% - 660px);
- top: 30px;
-
- @include mq-down(xl) {
-  display: none;
- }
 
  @include mq-down(md) {
-  display: flex;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0;
-  position: fixed;
-  right: 0;
-  top: auto;
-  bottom: 0;
-  align-items: flex-end;
+  padding: get_vw(20);
  }
-}
 
-.footer {
- font-size: 12px;
- color: var(--footer-color);
- text-align: center;
- margin-top: 40px;
+ h3 {
+  font-size: 24px;
+  text-align: center;
 
- @include mq-down(md) {
-  display: none;
+  @include mq-down(md) {
+   font-size: get_vw(24);
+  }
+ }
+
+ .des {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 15px;
+
+  @include mq-down(md) {
+   font-size: get_vw(14);
+   margin-top: get_vw(15);
+
+   br {
+    display: none;
+   }
+  }
+ }
+
+ aside {
+  text-align: center;
+  margin-top: 10px;
+
+  @include mq-down(md) {
+   margin-top: get_vw(10);
+  }
  }
 }

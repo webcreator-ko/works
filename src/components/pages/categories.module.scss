@@ -1,35 +1,33 @@
 @import "@/styles/index";
 
 .wrap {
-  color: var(--white-color);
-  background: var(--aside-bg-color);
-  border-radius: 20px;
-  padding: 30px;
+ background: var(--aside-bg-color);
+ border-radius: 20px;
+ padding: 30px;
 
-  @include mq-down(md) {
-    display: none;
+ @include mq-down(md) {
+  display: none;
+ }
+
+ h3 {
+  font-size: 20px;
+  font-weight: 600;
+ }
+
+ li {
+  margin-top: 30px;
+ }
+
+ a {
+  display: flex;
+ }
+
+ h4 {
+  font-size: 14px;
+  padding-right: 10px;
+
+  & + span {
+   padding: 0 2px;
   }
-
-  h3 {
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  li {
-    margin-top: 30px;
-  }
-
-  a {
-    display: flex;
-    color: var(--white-color);
-  }
-
-  h4 {
-    font-size: 14px;
-    padding-right: 10px;
-
-    & + span {
-      padding: 0 2px;
-    }
-  }
+ }
 }
