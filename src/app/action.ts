@@ -37,7 +37,7 @@ export async function getCategoryArticles({
  try {
   const data = await fetchComWP<ArticleType[]>({
    method: FetchType.Get,
-   endpoint: `/posts?per_page=${DEFAULT_IMPORT_ARTICLES_COUNT}&offset=${offset}&categories=${categoryId}&exclude=${excludeId}&_fields=id,date,title,content,category_name,category_id`,
+   endpoint: `/posts?per_page=${DEFAULT_IMPORT_ARTICLES_COUNT}&offset=${offset}&categories=${categoryId}&exclude=${excludeId}&_fields=id,date,title,content,x_featured_media_large,category_name,category_id`,
   });
 
   return data;
@@ -61,7 +61,7 @@ export async function getSearchArticles({
  try {
   const data = await fetchComWP<ArticleType[]>({
    method: FetchType.Get,
-   endpoint: `/posts?per_page=${DEFAULT_IMPORT_ARTICLES_COUNT}&offset=${offset}&search=${searchText}&exclude=${excludeId}&_fields=id,date,title,content,category_name,category_id`,
+   endpoint: `/posts?per_page=${DEFAULT_IMPORT_ARTICLES_COUNT}&offset=${offset}&search=${searchText}&exclude=${excludeId}&_fields=id,date,title,content,x_featured_media_large,category_name,category_id`,
   });
 
   return data;

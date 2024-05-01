@@ -1,16 +1,16 @@
 import Articles from "@/components/pages/Articles";
-import pageStyles from "./page.module.scss";
+import diaryStyles from "@/app/diary.module.scss";
 import ClientArticles from "@/components/pages/ClientArticles";
 import SideBar from "@/components/pages/Sidebar";
 
 export default function Home() {
  return (
-  <main className={pageStyles.wrap}>
-   <div className={pageStyles.left}>
+  <main className={diaryStyles.wrap}>
+   <div className={diaryStyles.left}>
     <Articles linkType="articles" />
     <ClientArticles linkType="articles" />
    </div>
-   <div className={pageStyles.right}>
+   <div className={diaryStyles.right}>
     <SideBar />
    </div>
   </main>

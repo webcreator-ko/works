@@ -4,17 +4,17 @@
  width: 100%;
 
  > li {
-  padding-top: 40px;
   box-sizing: border-box;
   border-left: solid 1px var(--article-border-color);
   border-right: solid 1px var(--article-border-color);
 
-  @include mq-down(md) {
-   padding-top: get_vw(30);
-  }
-
   & ~ li {
+   padding-top: 40px;
    border-top: solid 1px var(--article-border-color);
+
+   @include mq-down(md) {
+    padding-top: get_vw(40);
+   }
   }
 
   &:last-of-type {

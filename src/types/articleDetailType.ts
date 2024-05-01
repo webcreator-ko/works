@@ -8,4 +8,5 @@ export type ArticleDetailType = {
   rendered: string;
  };
  categories: number[];
+ x_featured_media_large: string;
 };

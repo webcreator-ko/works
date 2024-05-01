@@ -14,8 +14,10 @@
 
  .left {
   width: 60%;
+  padding-top: 40px;
 
   @include mq-down(md) {
+   padding-top: get_vw(40);
    width: 100%;
   }
  }
