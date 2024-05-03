@@ -3,6 +3,7 @@ import React from "react";
 import headerStyles from "./header.module.scss";
 import { getImageProps } from "next/image";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 function getBackgroundImage(srcSet = "") {
  const imageSet = srcSet
@@ -26,9 +27,12 @@ const Header = () => {
  });
  const backgroundImage = getBackgroundImage(srcSet);
  const pathName = usePathname();
-
  let name = "404";
- if (pathName === "/") {
+ if (
+  pathName === "/" ||
+  pathName.includes("/articles") ||
+  pathName.includes("/search")
+ ) {
   name = "Diary";
  } else if (pathName === "/works") {
   name = "Works";
@@ -41,9 +45,11 @@ const Header = () => {
  return (
   <header className={headerStyles.wrap} style={{ backgroundImage }} id="header">
    <h1>
-    WEB CREATOR
-    <br />
-    KO
+    <Link href="/">
+     WEB CREATOR
+     <br />
+     KO
+    </Link>
    </h1>
    <h2 className={headerStyles.leftFixed} data-text="Portfolio">
     {name}

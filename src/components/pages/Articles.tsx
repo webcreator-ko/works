@@ -35,6 +35,14 @@ const Articles = async ({
   data = await getSearchArticles({ offset: 0, excludeId, searchText });
  }
 
+ if (!data.length && linkType === "search") {
+  return (
+   <p className={articlesStyles.noSearch}>検索結果はありません &#x1f62d;</p>
+  );
+ }
+
+ if (!data.length) return null;
+
  return (
   <ul className={articlesStyles.articles}>
    {data.map((e, i) => {

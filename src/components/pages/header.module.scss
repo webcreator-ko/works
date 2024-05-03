@@ -23,6 +23,10 @@
   text-align: center;
   font-family: var(--font-pacifico);
 
+  a {
+   color: var(--white-color);
+  }
+
   @include mq-down(md) {
    font-size: get_vw(30);
   }
@@ -60,6 +64,7 @@
  z-index: 50;
  transition: 0.5s;
  mix-blend-mode: difference;
+ pointer-events: none;
 
  @include mq-down(md) {
   width: get_vw(300);

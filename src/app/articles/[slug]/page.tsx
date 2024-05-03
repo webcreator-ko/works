@@ -10,6 +10,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { formatterDate } from "@/libs/dayjs";
 import ShareList from "@/components/pages/ShareList";
+import Articles from "@/components/pages/Articles";
 
 export async function generateMetadata({
  params,
@@ -69,6 +70,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
       size={30}
      />
     </section>
+    <Articles
+     linkType="categories"
+     excludeId={articleId}
+     categoryId={categories[0]}
+    />
     <ClientArticles
      linkType="categories"
      excludeId={articleId}

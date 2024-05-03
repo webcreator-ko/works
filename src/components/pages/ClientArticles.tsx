@@ -88,8 +88,10 @@ const ClientArticles = ({
   };
  }, [linkType, searchText, offsetRef, isArticles, isLoading]);
 
+ if (!data.length) return null;
+
  return (
-  <>
+  <div className={clientArticlesStyles.wrap}>
    <ul className={articlesStyles.articles}>
     {data.map((e, i) => {
      return (
@@ -113,7 +115,7 @@ const ClientArticles = ({
      <ReactLoading type="spin" color="white" height={30} width={30} />
     </div>
    )}
-  </>
+  </div>
  );
 };
 

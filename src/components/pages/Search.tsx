@@ -3,9 +3,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import searchStyles from "./search.module.scss";
 import { SP_WIDTH } from "@/const/size";
-import { useRouter } from "next/navigation";
 
-const Search = () => {
+type Props = {
+ defaultSearchText?: string;
+};
+
+const Search = ({ defaultSearchText }: Props) => {
  const [isDisplaySearch, setDisplaySearch] = useState(true);
 
  // スクロール検知
@@ -30,7 +33,6 @@ const Search = () => {
  }, []);
 
  const searchRef = useRef<HTMLInputElement>(null);
- const router = useRouter();
  const onClickSearchResult = () => {
   const val = searchRef.current?.value;
   if (!val) return;
@@ -44,7 +46,7 @@ const Search = () => {
   <search
    className={`${searchStyles.wrap} ${isDisplaySearch ? searchStyles.on : ""}`}
   >
-   <input type="text" ref={searchRef} />
+   <input type="text" ref={searchRef} defaultValue={defaultSearchText} />
    <button onClick={onClickSearchResult} type="button">
     Search
    </button>

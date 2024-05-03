@@ -1,11 +1,15 @@
 import Profile from "./Profile";
 import Search from "./Search";
 
-const SideBar = () => {
+type Props = {
+ defaultSearchText?: string;
+};
+
+const SideBar = ({ defaultSearchText }: Props) => {
  return (
   <>
    <Profile />
-   <Search />
+   <Search defaultSearchText={defaultSearchText} />
   </>
  );
 };

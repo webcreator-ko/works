@@ -1,5 +1,19 @@
 @import "@/styles/index";
 
+.noSearch {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100%;
+ font-size: 16px;
+ color: var(--white-color);
+
+ @include mq-down(md) {
+  font-size: get_vw(16);
+  padding: get_vw(40) 0 get_vw(60);
+ }
+}
+
 .articles {
  width: 100%;
 
