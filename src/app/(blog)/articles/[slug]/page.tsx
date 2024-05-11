@@ -1,7 +1,6 @@
-import diaryStyles from "@/app/diary.module.scss";
+import blogStyles from "@/app/(blog)/blog.module.scss";
 import pageStyles from "./page.module.scss";
-import ClientArticles from "@/components/pages/ClientArticles";
-import SideBar from "@/components/pages/Sidebar";
+import ClientArticles from "@/components/pages/blog/ClientArticles";
 import { fetchComWP } from "@/libs/fetchComWP";
 import { ArticleDetailType } from "@/types/articleDetailType";
 import { FetchType } from "@/types/fetchType";
@@ -9,8 +8,9 @@ import { decode } from "html-entities";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { formatterDate } from "@/libs/dayjs";
-import ShareList from "@/components/pages/ShareList";
-import Articles from "@/components/pages/Articles";
+import ShareList from "@/components/pages/blog/ShareList";
+import Articles from "@/components/pages/blog/Articles";
+import SideBar from "@/components/pages/blog/SideBar";
 
 export async function generateMetadata({
  params,
@@ -48,8 +48,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
   });
 
  return (
-  <main className={diaryStyles.wrap}>
-   <div className={diaryStyles.left}>
+  <main className={blogStyles.wrap}>
+   <div className={blogStyles.left}>
     <section className={pageStyles.wrap}>
      <h1 dangerouslySetInnerHTML={{ __html: title.rendered }} />
      <time>{formatterDate(date)}</time>
@@ -81,7 +81,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
      categoryId={categories[0]}
     />
    </div>
-   <div className={diaryStyles.right}>
+   <div className={blogStyles.right}>
     <SideBar />
    </div>
   </main>

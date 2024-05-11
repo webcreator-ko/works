@@ -1,11 +1,11 @@
-import diaryStyles from "@/app/diary.module.scss";
-import ClientArticles from "@/components/pages/ClientArticles";
-import SideBar from "@/components/pages/Sidebar";
+import blogStyles from "@/app/(blog)/blog.module.scss";
+import ClientArticles from "@/components/pages/blog/ClientArticles";
 
 import { notFound } from "next/navigation";
 
-import Articles from "@/components/pages/Articles";
+import Articles from "@/components/pages/blog/Articles";
 import { decode } from "html-entities";
+import SideBar from "@/components/pages/blog/SideBar";
 
 export async function generateMetadata({
  params,
@@ -39,12 +39,12 @@ export default async function Page({
  if (!p) notFound();
 
  return (
-  <main className={diaryStyles.wrap}>
-   <div className={diaryStyles.left}>
+  <main className={blogStyles.wrap}>
+   <div className={blogStyles.left}>
     <Articles linkType="search" searchText={p as string} />
     <ClientArticles linkType="search" searchText={p as string} />
    </div>
-   <div className={diaryStyles.right}>
+   <div className={blogStyles.right}>
     <SideBar defaultSearchText={p as string} />
    </div>
   </main>
