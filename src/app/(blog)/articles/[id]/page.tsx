@@ -12,16 +12,12 @@ import ShareList from "@/components/pages/blog/ShareList";
 import Articles from "@/components/pages/blog/Articles";
 import SideBar from "@/components/pages/blog/SideBar";
 
-export async function generateMetadata({
- params,
-}: {
- params: { slug: string };
-}) {
- const { slug } = params;
+export async function generateMetadata({ params }: { params: { id: string } }) {
+ const { id } = params;
 
  const { title, content } = await fetchComWP<ArticleDetailType>({
   method: FetchType.Get,
-  endpoint: `/posts/${slug}?_fields=date,title,content`,
+  endpoint: `/posts/${id}?_fields=date,title,content`,
  });
 
  if (!title || !content) notFound();
@@ -37,14 +33,14 @@ export async function generateMetadata({
  };
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
- const { slug } = params;
- const articleId = Number(slug);
+export default async function Page({ params }: { params: { id: string } }) {
+ const { id } = params;
+ const articleId = Number(id);
 
  const { date, title, content, categories, x_featured_media_large } =
   await fetchComWP<ArticleDetailType>({
    method: FetchType.Get,
-   endpoint: `/posts/${slug}?_fields=date,title,content,categories,x_featured_media_large`,
+   endpoint: `/posts/${id}?_fields=date,title,content,categories,x_featured_media_large`,
   });
 
  return (
@@ -65,7 +61,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
      <article dangerouslySetInnerHTML={{ __html: content.rendered }} />
      <ShareList
       title={decode(title.rendered)}
-      url={`${process.env.NEXT_PUBLIC_SITE_URL}/articles/${slug}`}
+      url={`${process.env.NEXT_PUBLIC_SITE_URL}/articles/${id}`}
       hashTags={["WebCreator_KO"]}
       size={30}
      />
