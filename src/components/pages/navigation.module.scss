@@ -54,6 +54,7 @@
 
   li {
    font-size: 16px;
+   font-family: var(--font-pacifico);
 
    @include mq-down(md) {
     font-size: get_vw(16);
@@ -61,6 +62,13 @@
 
    a {
     color: var(--white-color);
+    opacity: 0.5;
+    transition: 0.5s;
+
+    &:hover,
+    &.on {
+     opacity: 1;
+    }
    }
   }
  }

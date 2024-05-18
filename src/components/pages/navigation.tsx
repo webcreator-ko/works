@@ -1,6 +1,7 @@
 "use client";
 import navigationStyles from "./navigation.module.scss";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const Navigation = () => {
@@ -30,6 +31,8 @@ const Navigation = () => {
   };
  }, []);
 
+ const pathname = usePathname();
+
  return (
   <nav
    className={`${navigationStyles.wrap} ${
@@ -42,16 +45,36 @@ const Navigation = () => {
    </h1>
    <ul>
     <li>
-     <Link href="/">Diary</Link>
+     <Link
+      href="/"
+      className={pathname.length === 1 ? navigationStyles.on : ""}
+     >
+      Diary
+     </Link>
     </li>
     <li>
-     <Link href="/works">Works</Link>
+     <Link
+      href="/works"
+      className={pathname.includes("works") ? navigationStyles.on : ""}
+     >
+      Works
+     </Link>
     </li>
     <li>
-     <Link href="/gallery">Gallery</Link>
+     <Link
+      href="/gallery"
+      className={pathname.includes("gallery") ? navigationStyles.on : ""}
+     >
+      Gallery
+     </Link>
     </li>
     <li>
-     <Link href="/contact">Contact</Link>
+     <Link
+      href="/contact"
+      className={pathname.includes("contact") ? navigationStyles.on : ""}
+     >
+      Contact
+     </Link>
     </li>
    </ul>
   </nav>
