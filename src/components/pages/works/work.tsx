@@ -4,12 +4,19 @@ import Image from "next/image";
 
 type Props = {
  title: string;
+ description: string;
  imgSrc: string;
  technologyStack: string;
  tasks: string;
 };
 
-const Work = ({ title, imgSrc, technologyStack, tasks }: Props) => {
+const Work = ({
+ title,
+ description,
+ imgSrc,
+ technologyStack,
+ tasks,
+}: Props) => {
  return (
   <section className={workStyles.wrap}>
    <h2>{title}</h2>
@@ -18,6 +25,8 @@ const Work = ({ title, imgSrc, technologyStack, tasks }: Props) => {
      <Image src={imgSrc} fill alt="" />
     </div>
     <dl>
+     <dt>サービス内容</dt>
+     <dd>{description}</dd>
      <dt>技術スタック</dt>
      <dd>{technologyStack}</dd>
      <dt>主な実装</dt>

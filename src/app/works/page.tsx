@@ -7,6 +7,7 @@ const page = () => {
   <div className={pageStyles.wrap}>
    <Work
     title="YOMcoma Web"
+    description="短い時間で短いマンガをもっと楽しめる、ショートマンガ専用サービス"
     imgSrc="/yomcoma.png"
     technologyStack="Next.js(Pages router), NestJS, MySQL, GCP(主にAppEngine, CloudStorage),
       外部API(OpenAI, Kyash)"
@@ -14,6 +15,7 @@ const page = () => {
    />
    <Work
     title="Creator Profile"
+    description="かんたんな質問に答えるだけで、あなただけのプロフ帳が無料で作れます。更にファンによるファンアートやコメント投稿、作品展示など可能！"
     imgSrc="/creatorProfile.png"
     technologyStack="Next.js(App router), NextAuth, Vercel Postgres, GCP(CloudStorage), 外部API(OpenAI)"
     tasks="認証、プロフィールに関する入力フォームの実装、OGP画像の自動生成、ダッシュボードの実装、Next.jsのストリーミングを使用したプロフィールページの実装、英語のプロフィールページ自動生成"
