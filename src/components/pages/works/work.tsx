@@ -1,24 +1,27 @@
 import React from "react";
 import workStyles from "./work.module.scss";
 import Image from "next/image";
-const Work = () => {
+
+type Props = {
+ title: string;
+ imgSrc: string;
+ technologyStack: string;
+ tasks: string;
+};
+
+const Work = ({ title, imgSrc, technologyStack, tasks }: Props) => {
  return (
   <section className={workStyles.wrap}>
-   <h2>YOMcoma Web</h2>
+   <h2>{title}</h2>
    <div className={workStyles.inner}>
     <div className={workStyles.imageFrame}>
-     <Image src="/yomcoma.png" fill alt="" />
+     <Image src={imgSrc} fill alt="" />
     </div>
     <dl>
      <dt>技術スタック</dt>
-     <dd>
-      Next.js(Pages router), NestJS, MySQL, GCP(主にAppEngine, CloudStorage),
-      外部API(OpenAI, Kyash)
-     </dd>
+     <dd>{technologyStack}</dd>
      <dt>主な実装</dt>
-     <dd>
-      グループチャット機能、作品画像一括アップロード、AIとOCRを使用した作品タイトルと説明の自動生成機能、Kyashによる送金システム
-     </dd>
+     <dd>{tasks}</dd>
     </dl>
    </div>
   </section>

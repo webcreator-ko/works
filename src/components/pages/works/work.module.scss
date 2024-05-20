@@ -9,6 +9,18 @@
  margin-top: 50px;
  background: var(--dark-color);
 
+ @include mq-down(md) {
+  margin-top: get_vw(50);
+ }
+
+ & ~ .wrap {
+  margin-top: 100px;
+
+  @include mq-down(md) {
+   margin-top: get_vw(100);
+  }
+ }
+
  .inner {
   width: 100%;
   height: 100%;
