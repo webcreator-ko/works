@@ -1,3 +1,5 @@
+@import "@/styles/index";
+
 .wrap {
  width: 100%;
  min-height: 400px;
@@ -16,6 +18,10 @@
   padding: 40px;
   position: relative;
   box-sizing: border-box;
+
+  @include mq-down(md) {
+   padding: get_vw(20);
+  }
 
   &::before {
    content: "";
@@ -65,6 +71,11 @@
    box-sizing: border-box;
    margin: 0 auto;
 
+   @include mq-down(md) {
+    width: 100%;
+    height: get_vw(250);
+   }
+
    &:after {
     content: "";
     position: absolute;
@@ -96,6 +107,28 @@
     box-sizing: border-box;
     padding: 10px;
     z-index: 10;
+   }
+  }
+
+  dt {
+   font-size: 14px;
+   font-weight: 600;
+   margin-top: 20px;
+
+   @include mq-down(md) {
+    font-size: get_vw(14);
+    margin-top: get_vw(20);
+   }
+  }
+
+  dd {
+   font-size: 14px;
+   line-height: 1.6;
+   margin-top: 5px;
+
+   @include mq-down(md) {
+    font-size: get_vw(14);
+    margin-top: get_vw(5);
    }
   }
  }
