@@ -27,7 +27,7 @@ const Work = ({
     <dl>
      <dt>サービス内容</dt>
      <dd>{description}</dd>
-     <dt>技術スタック</dt>
+     <dt>使用した技術スタック</dt>
      <dd>{technologyStack}</dd>
      <dt>主な実装</dt>
      <dd>{tasks}</dd>
