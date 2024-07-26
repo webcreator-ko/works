@@ -18,9 +18,9 @@
   width: 100%;
 
   > li {
-    box-sizing: border-box;
     border-left: solid 1px var(--article-border-color);
     border-right: solid 1px var(--article-border-color);
+    box-sizing: border-box;
 
     & ~ li {
       padding-top: 40px;

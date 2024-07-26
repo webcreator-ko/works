@@ -9,7 +9,8 @@
     "lint": "eslint --ext .ts,.js,.tsx . && prettier --check \"./**/*.{ts,js,tsx}\"",
     "lint:fix": "eslint --ext .ts,.js,.tsx . --fix && prettier --write \"./**/*.{ts,js,tsx,scss}\"",
     "lint:style": "stylelint **/*.{css,scss}",
-    "format": "prettier --write './**/*.{js,ts,tsx,scss}'"
+    "format": "prettier --write './**/*.{js,ts,tsx,scss}'",
+    "prepare": "husky install"
   },
   "dependencies": {
     "dayjs": "^1.11.12",
@@ -34,6 +35,8 @@
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-tailwindcss": "^3.17.4",
     "eslint-plugin-unused-imports": "^3.2.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.7",
     "postcss": "^8.4.40",
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
@@ -42,5 +45,17 @@
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   }
 }
