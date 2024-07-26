@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 type Props = {
   size?: number;
   fillColor?: string;
 };
 
-const HamburgerIcon = ({ size = 50, fillColor = "white" }: Props) => {
+const HamburgerIcon = ({ size = 50, fillColor = 'white' }: Props) => {
   return (
     <svg
       enableBackground="new 0 0 512 512"

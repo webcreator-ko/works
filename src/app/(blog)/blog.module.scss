@@ -1,35 +1,35 @@
-@import "@/styles/index";
+@import '@/styles/index';
 
 .wrap {
- display: flex;
- max-width: 1200px;
- padding: 0 20px;
- box-sizing: border-box;
- margin: 0 auto;
-
- @include mq-down(md) {
-  flex-direction: column;
-  padding: 0 get_vw(20) get_vw(200);
- }
-
- .left {
-  width: 60%;
-  padding-top: 40px;
-
-  @include mq-down(md) {
-   padding-top: get_vw(40);
-   width: 100%;
-  }
- }
-
- .right {
-  width: 40%;
-  padding: 40px 0 0 50px;
+  display: flex;
+  max-width: 1200px;
+  padding: 0 20px;
   box-sizing: border-box;
+  margin: 0 auto;
 
   @include mq-down(md) {
-   padding: get_vw(40) 0 0;
-   width: 100%;
+    flex-direction: column;
+    padding: 0 get_vw(20) get_vw(200);
   }
- }
+
+  .left {
+    width: 60%;
+    padding-top: 40px;
+
+    @include mq-down(md) {
+      padding-top: get_vw(40);
+      width: 100%;
+    }
+  }
+
+  .right {
+    width: 40%;
+    padding: 40px 0 0 50px;
+    box-sizing: border-box;
+
+    @include mq-down(md) {
+      padding: get_vw(40) 0 0;
+      width: 100%;
+    }
+  }
 }

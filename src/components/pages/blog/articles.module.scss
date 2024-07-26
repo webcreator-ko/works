@@ -1,38 +1,38 @@
-@import "@/styles/index";
+@import '@/styles/index';
 
 .noSearch {
- display: flex;
- align-items: center;
- justify-content: center;
- height: 100%;
- font-size: 16px;
- color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 16px;
+  color: var(--white-color);
 
- @include mq-down(md) {
-  font-size: get_vw(16);
-  padding: get_vw(40) 0 get_vw(60);
- }
+  @include mq-down(md) {
+    font-size: get_vw(16);
+    padding: get_vw(40) 0 get_vw(60);
+  }
 }
 
 .articles {
- width: 100%;
+  width: 100%;
 
- > li {
-  box-sizing: border-box;
-  border-left: solid 1px var(--article-border-color);
-  border-right: solid 1px var(--article-border-color);
+  > li {
+    box-sizing: border-box;
+    border-left: solid 1px var(--article-border-color);
+    border-right: solid 1px var(--article-border-color);
 
-  & ~ li {
-   padding-top: 40px;
-   border-top: solid 1px var(--article-border-color);
+    & ~ li {
+      padding-top: 40px;
+      border-top: solid 1px var(--article-border-color);
 
-   @include mq-down(md) {
-    padding-top: get_vw(40);
-   }
+      @include mq-down(md) {
+        padding-top: get_vw(40);
+      }
+    }
+
+    &:last-of-type {
+      border-bottom: solid 1px var(--article-border-color);
+    }
   }
-
-  &:last-of-type {
-   border-bottom: solid 1px var(--article-border-color);
-  }
- }
 }

@@ -1,19 +1,19 @@
-@import "@/styles/index";
+@import '@/styles/index';
 
 .wrap {
- margin-top: 40px;
+  margin-top: 40px;
 
- @include mq-down(md) {
-  margin-top: get_vw(40);
- }
+  @include mq-down(md) {
+    margin-top: get_vw(40);
+  }
 }
 
 .loading {
- display: flex;
- justify-content: center;
- margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 
- @include mq-down(md) {
-  margin: get_vw(20) 0;
- }
+  @include mq-down(md) {
+    margin: get_vw(20) 0;
+  }
 }

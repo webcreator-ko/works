@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 type Props = {
   size?: number;
   fillColor?: string;
 };
 
-const HomeIcon = ({ size = 30, fillColor = "white" }: Props) => {
+const HomeIcon = ({ size = 30, fillColor = 'white' }: Props) => {
   return (
     <svg
       version="1.1"

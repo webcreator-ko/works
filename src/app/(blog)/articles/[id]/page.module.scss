@@ -1,59 +1,59 @@
-@import "@/styles/index";
+@import '@/styles/index';
 
 .wrap {
- border: 1px solid var(--white-color);
- padding: 20px;
- border-radius: 20px;
- box-shadow: 0px 2px 10px var(--white-color);
- transition: 0.5s;
- margin-bottom: 40px;
-
- @include mq-down(md) {
-  margin-bottom: get_vw(40);
- }
-
- h1 {
-  font-size: 20px;
-  line-height: 1.6;
+  border: 1px solid var(--white-color);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 10px var(--white-color);
+  transition: 0.5s;
+  margin-bottom: 40px;
 
   @include mq-down(md) {
-   font-size: get_vw(20);
+    margin-bottom: get_vw(40);
   }
- }
 
- time {
-  display: block;
-  margin-top: 10px;
-  text-align: right;
+  h1 {
+    font-size: 20px;
+    line-height: 1.6;
 
-  @include mq-down(md) {
-   margin-top: get_vw(10);
+    @include mq-down(md) {
+      font-size: get_vw(20);
+    }
   }
- }
 
- .image {
-  display: block;
-  width: 100%;
-  height: 350px;
-  position: relative;
-  object-fit: cover;
-  object-position: center;
-  margin-top: 20px;
+  time {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
 
-  @include mq-down(md) {
-   height: get_vw(200);
-   margin-top: get_vw(20);
+    @include mq-down(md) {
+      margin-top: get_vw(10);
+    }
   }
- }
 
- article {
-  font-size: 17px;
-  line-height: 1.6;
-  padding-top: 10px;
+  .image {
+    display: block;
+    width: 100%;
+    height: 350px;
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 20px;
 
-  @include mq-down(md) {
-   font-size: get_vw(17);
-   padding-top: get_vw(10);
+    @include mq-down(md) {
+      height: get_vw(200);
+      margin-top: get_vw(20);
+    }
   }
- }
+
+  article {
+    font-size: 17px;
+    line-height: 1.6;
+    padding-top: 10px;
+
+    @include mq-down(md) {
+      font-size: get_vw(17);
+      padding-top: get_vw(10);
+    }
+  }
 }

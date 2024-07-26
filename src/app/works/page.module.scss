@@ -1,16 +1,16 @@
-@import "@/styles/index";
+@import '@/styles/index';
 
 .wrap {
- display: flex;
- flex-direction: column;
- max-width: 1200px;
- padding: 0 20px;
- box-sizing: border-box;
- margin: 0 auto;
- padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-bottom: 100px;
 
- @include mq-down(md) {
-  padding: 0 get_vw(20);
-  padding-bottom: get_vw(100);
- }
+  @include mq-down(md) {
+    padding: 0 get_vw(20);
+    padding-bottom: get_vw(100);
+  }
 }
