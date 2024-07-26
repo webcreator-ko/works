@@ -1,4 +1,11 @@
 {
- "typescript.tsdk": "node_modules/typescript/lib",
- "editor.formatOnSave": true
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "cSpell.customDictionaries": {
+    "project-words": {
+      "path": "./cspell.json",
+      "addWords": true
+    }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
