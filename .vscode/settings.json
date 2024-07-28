@@ -5,11 +5,6 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll.stylelint": "always"
   },
-  "cSpell.customDictionaries": {
-    "project-words": {
-      "path": "./cspell.json",
-      "addWords": true
-    }
-  },
+  "cSpell.import": ["../cspell.json"],
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
