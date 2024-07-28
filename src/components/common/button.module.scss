@@ -1,0 +1,23 @@
+.default {
+  display: block;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: 700;
+  color: inherit;
+  color: var(--black-color);
+  background: var(--light-gray-color);
+  border-radius: 20px;
+  margin: 40px auto 0;
+}
+
+.loading {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: wait;
+  opacity: 0.5;
+}

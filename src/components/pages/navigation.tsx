@@ -58,22 +58,22 @@ const Navigation = () => {
             Diary
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             href="/works"
             className={pathname.includes('works') ? navigationStyles.on : ''}
           >
             Works
           </Link>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <Link
             href="/gallery"
             className={pathname.includes('gallery') ? navigationStyles.on : ''}
           >
             Gallery
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             href="/contact"

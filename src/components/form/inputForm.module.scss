@@ -1,0 +1,15 @@
+.wrap,
+.loading {
+  width: 80%;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1;
+  padding: 5px 10px;
+  color: var(--black-color);
+  box-sizing: border-box;
+}
+
+.loading {
+  background: var(--dark-gray-color);
+}

@@ -1,0 +1,33 @@
+@import '@/styles/index';
+
+.wrap {
+  max-width: 600px;
+  margin: 60px auto 0;
+  padding-bottom: 120px;
+
+  @include mq-down(md) {
+    max-width: 90%;
+    margin: get_vw(60) auto 0;
+    padding-bottom: get_vw(120);
+  }
+
+  dl ~ dl {
+    margin-top: 30px;
+
+    @include mq-down(md) {
+      margin-top: get_vw(30);
+    }
+
+    dd {
+      margin-top: 5px;
+
+      @include mq-down(md) {
+        margin-top: get_vw(5);
+      }
+    }
+  }
+
+  .input {
+    max-width: 70%;
+  }
+}
