@@ -1,4 +1,4 @@
-@import url('@/styles/index');
+@import '@/styles/index';
 
 .wrap {
   position: relative;
@@ -26,6 +26,27 @@
     a {
       color: var(--white-color);
     }
+
+    @include mq-down(md) {
+      font-size: get_vw(30);
+    }
+  }
+}
+
+.leftFixed {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  .rect {
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    font-size: 70px;
+    opacity: 0.1;
+    writing-mode: vertical-rl;
 
     @include mq-down(md) {
       font-size: get_vw(30);
