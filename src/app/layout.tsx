@@ -1,7 +1,9 @@
-import '@/app/globals.scss';
+import '@/app/global.scss';
+import '@/app/tailwind.css';
 import { Pacifico } from 'next/font/google';
 import Header from '@/components/pages/header';
 import Navigation from '@/components/pages/navigation';
+import { Providers } from './providers';
 import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
@@ -45,7 +47,7 @@ export default function RootLayout({
       <body>
         <Header />
         <Navigation />
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
