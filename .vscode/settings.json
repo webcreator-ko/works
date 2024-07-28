@@ -5,6 +5,17 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll.stylelint": "always"
   },
+  "eslint.validate": [
+    "html",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "scss"],
   "cSpell.import": ["../cspell.json"],
   "cSpell.enabledLanguageIds": [
     "javascript",

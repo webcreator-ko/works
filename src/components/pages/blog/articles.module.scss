@@ -1,4 +1,4 @@
-@import '@/styles/index';
+@import url('@/styles/index');
 
 .noSearch {
   display: flex;
@@ -9,8 +9,8 @@
   color: var(--white-color);
 
   @include mq-down(md) {
-    font-size: get_vw(16);
     padding: get_vw(40) 0 get_vw(60);
+    font-size: get_vw(16);
   }
 }
 
@@ -18,9 +18,9 @@
   width: 100%;
 
   > li {
-    border-left: solid 1px var(--article-border-color);
-    border-right: solid 1px var(--article-border-color);
     box-sizing: border-box;
+    border-right: solid 1px var(--article-border-color);
+    border-left: solid 1px var(--article-border-color);
 
     & ~ li {
       padding-top: 40px;

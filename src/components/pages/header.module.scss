@@ -1,27 +1,27 @@
-@import '@/styles/index';
+@import url('@/styles/index');
 
 .wrap {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 300px;
-  background-size: cover;
   background-position: center;
-  position: relative;
+  background-size: cover;
 
   @include mq-down(md) {
     height: get_vw(159);
   }
 
   h1 {
-    text-shadow: 2px 2px 3px rgb(255 255 255 / 25%);
+    position: relative;
+    z-index: 10;
+    font-family: var(--font-pacifico);
     font-size: 70px;
     line-height: 1.2;
-    z-index: 10;
-    position: relative;
     text-align: center;
-    font-family: var(--font-pacifico);
+    text-shadow: 2px 2px 3px rgb(255 255 255 / 25%);
 
     a {
       color: var(--white-color);
@@ -33,38 +33,17 @@
   }
 }
 
-.leftFixed {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 50;
-  font-size: 70px;
-  opacity: 0.1;
-  writing-mode: vertical-rl;
-
-  @include mq-down(md) {
-    font-size: get_vw(30);
-  }
-}
-
 .rect {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
   width: 700px;
   height: 300px;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   margin: auto;
   overflow: hidden;
-  z-index: 50;
-  transition: 0.5s;
-  mix-blend-mode: difference;
   pointer-events: none;
+  mix-blend-mode: difference;
+  transition: 0.5s;
 
   @include mq-down(md) {
     width: get_vw(300);
@@ -104,8 +83,8 @@
     width: calc(100% - 12px);
     height: calc(100% - 12px);
     content: '';
-    border-radius: 5px;
     background: var(--black-color);
+    border-radius: 5px;
   }
 }
 

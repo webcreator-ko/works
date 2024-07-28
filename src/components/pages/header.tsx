@@ -55,7 +55,7 @@ const Header = () => {
           KO
         </Link>
       </h1>
-      <h2 className={headerStyles.leftFixed} data-text="Portfolio">
+      <h2 className={headerStyles.left - fxed} data-text="Portfolio">
         {name}
       </h2>
       <div className={headerStyles.rect} />

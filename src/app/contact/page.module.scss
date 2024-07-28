@@ -1,14 +1,14 @@
-@import '@/styles/index';
+@import url('@/styles/index');
 
 .wrap {
   max-width: 600px;
-  margin: 60px auto 0;
   padding-bottom: 120px;
+  margin: 60px auto 0;
 
   @include mq-down(md) {
     max-width: 90%;
-    margin: get_vw(60) auto 0;
     padding-bottom: get_vw(120);
+    margin: get_vw(60) auto 0;
   }
 
   dl ~ dl {

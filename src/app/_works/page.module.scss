@@ -1,13 +1,13 @@
-@import '@/styles/index';
+@import url('@/styles/index');
 
 .wrap {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
   padding: 0 20px;
-  box-sizing: border-box;
-  margin: 0 auto;
   padding-bottom: 100px;
+  margin: 0 auto;
 
   @include mq-down(md) {
     padding: 0 get_vw(20);

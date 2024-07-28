@@ -8,6 +8,7 @@ import { initialState } from '@/libs/form';
 import { zodSchema } from '@/libs/zod';
 import { postFormData } from './action';
 import pageStyles from './page.module.scss';
+
 type inputType = 'name' | 'email';
 
 export default function Page() {

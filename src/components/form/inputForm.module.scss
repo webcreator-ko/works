@@ -1,13 +1,13 @@
 .wrap,
 .loading {
+  box-sizing: border-box;
   width: 80%;
   height: 50px;
-  border-radius: 8px;
+  padding: 5px 10px;
   font-size: 14px;
   line-height: 1;
-  padding: 5px 10px;
   color: var(--black-color);
-  box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .loading {

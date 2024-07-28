@@ -1,6 +1,6 @@
 // 全体に適用させるリセットCSS
 
-@use './root.module.scss';
+@use './root.module';
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
 v2.0 | 20110126
@@ -96,6 +96,7 @@ License: none (public domain)
     vertical-align: baseline;
     border: 0;
   }
+
   /* HTML5 display-role reset for older browsers */
   article,
   aside,
@@ -110,28 +111,34 @@ License: none (public domain)
   section {
     display: block;
   }
+
   body {
     line-height: 1;
   }
+
   ol,
   ul {
     list-style: none;
   }
+
   blockquote,
   q {
     quotes: none;
   }
-  blockquote:before,
-  blockquote:after,
-  q:before,
-  q:after {
+
+  blockquote::before,
+  blockquote::after,
+  q::before,
+  q::after {
     content: '';
     content: none;
   }
+
   table {
     border-spacing: 0;
     border-collapse: collapse;
   }
+
   button,
   input,
   textarea,

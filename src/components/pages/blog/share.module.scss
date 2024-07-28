@@ -1,9 +1,9 @@
-@import '@/styles/index';
+@import url('@/styles/index');
 
 .wrap {
   display: flex;
-  justify-content: flex-end;
   gap: 20px;
+  justify-content: flex-end;
   margin-top: 20px;
 
   @include mq-down(md) {

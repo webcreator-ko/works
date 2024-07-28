@@ -1,10 +1,10 @@
-@import '@/styles/index';
+@import url('@/styles/index');
 
 .wrap {
+  box-sizing: border-box;
   display: flex;
   max-width: 1200px;
   padding: 0 20px;
-  box-sizing: border-box;
   margin: 0 auto;
 
   @include mq-down(md) {
@@ -17,19 +17,19 @@
     padding-top: 40px;
 
     @include mq-down(md) {
-      padding-top: get_vw(40);
       width: 100%;
+      padding-top: get_vw(40);
     }
   }
 
   .right {
+    box-sizing: border-box;
     width: 40%;
     padding: 40px 0 0 50px;
-    box-sizing: border-box;
 
     @include mq-down(md) {
-      padding: get_vw(40) 0 0;
       width: 100%;
+      padding: get_vw(40) 0 0;
     }
   }
 }

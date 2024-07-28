@@ -1,14 +1,14 @@
-@import '@/styles/index';
+@import url('@/styles/index');
 
 .wrap {
-  border: 1px solid var(--white-color);
   padding: 20px;
+  border: 1px solid var(--white-color);
   border-radius: 20px;
-  box-shadow: 0px 2px 10px var(--white-color);
+  box-shadow: 0 2px 10px var(--white-color);
   transition: 0.5s;
 
   &:hover {
-    box-shadow: 0px 2px 5px var(--white-color);
+    box-shadow: 0 2px 5px var(--white-color);
   }
 
   @include mq-down(md) {
@@ -16,9 +16,9 @@
   }
 
   > a {
-    width: 100%;
     display: flex;
     gap: 10px;
+    width: 100%;
     color: var(--white-color);
     text-align: center;
 
@@ -36,8 +36,8 @@
     h1 {
       display: flex;
       font-size: 20px;
-      line-height: 1.6;
       font-weight: 600;
+      line-height: 1.6;
 
       @include mq-down(md) {
         font-size: get_vw(17);
@@ -45,28 +45,28 @@
     }
 
     p {
+      display: -webkit-box;
+      flex: 1;
+      padding-top: 10px;
+      overflow: hidden;
       font-size: 17px;
       line-height: 1.6;
-      padding-top: 10px;
-      display: -webkit-box;
       text-overflow: ellipsis;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3;
-      overflow: hidden;
-      flex: 1;
 
       @include mq-down(md) {
-        font-size: get_vw(14);
         padding-top: get_vw(10);
+        font-size: get_vw(14);
       }
     }
 
     .image {
+      position: relative;
       width: 100%;
       height: 300px;
-      border-radius: 10px;
       margin-top: 10px;
-      position: relative;
+      border-radius: 10px;
 
       @include mq-down(md) {
         width: 100%;
@@ -85,21 +85,21 @@
 
   time {
     display: block;
+    padding-top: 20px;
     font-size: 14px;
     text-align: right;
-    padding-top: 20px;
 
     @include mq-down(md) {
-      font-size: get_vw(12);
       padding-top: get_vw(20);
+      font-size: get_vw(12);
     }
   }
 }
 
 .sns {
   display: flex;
-  justify-content: flex-end;
   gap: 20px;
+  justify-content: flex-end;
   margin-top: 10px;
 
   @include mq-down(md) {
