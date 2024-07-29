@@ -123,6 +123,9 @@ export default function Page() {
         return;
       }
 
+      window.alert(
+        'お問い合わせ頂きありがとうございます\nご連絡まで少々お待ちいただけますようお願い申し上げます'
+      );
       setLoading(false);
     })();
   }, [state]);
