@@ -9,7 +9,7 @@
     }
   ],
   "dictionaries": ["custom-dictionary"],
-  "words": ["nextui", "tailwindcss"],
+  "words": ["nextui", "tailwindcss", "recaptcha", "sitekey"],
   "ignoreWords": [],
   "import": []
 }

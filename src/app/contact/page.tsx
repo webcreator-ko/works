@@ -1,6 +1,7 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useFormState } from 'react-dom';
+import ReCAPTCHA from 'react-google-recaptcha';
 import InputForm from '@/components/form/InputForm';
 import Submit from '@/components/form/Submit';
 import TextareaForm from '@/components/form/TextareaForm';
@@ -28,6 +29,7 @@ export default function Page() {
       isInvalid: true,
     },
   });
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const onChangeInput = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -94,7 +96,6 @@ export default function Page() {
 
   useEffect(() => {
     const isInvalid = Object.values(formData).some((field) => field.isInvalid);
-    console.log('isInvalid', isInvalid);
 
     if (isInvalid) {
       setIsInvalid(true);
@@ -103,11 +104,18 @@ export default function Page() {
     }
   }, [formData]);
 
-  const [state, formAction] = useFormState(postFormData, initialState);
+  const [isReCAPTCHAToken, setReCAPTCHAToken] = useState('');
+
+  const action = postFormData.bind(null, isReCAPTCHAToken);
+  const [state, formAction] = useFormState(action, initialState);
 
   useEffect(() => {
     (async () => {
       if (!state.status) return;
+
+      if (recaptchaRef.current) {
+        onErrorRecaptcha();
+      }
 
       if (state.status != 200) {
         window.alert(state.message);
@@ -118,6 +126,19 @@ export default function Page() {
       setLoading(false);
     })();
   }, [state]);
+
+  const onChangeRecaptcha = (token: string | null) => {
+    if (token) {
+      setReCAPTCHAToken(token);
+    }
+  };
+  const onErrorRecaptcha = () => {
+    if (recaptchaRef.current) {
+      // ReCAPTCHA リセット
+      recaptchaRef.current.reset();
+      setReCAPTCHAToken('');
+    }
+  };
 
   return (
     <form action={formAction} className={pageStyles.wrap}>
@@ -161,10 +182,19 @@ export default function Page() {
           />
         </dd>
       </dl>
-
+      <div className={pageStyles.reCAPTCHAWrap}>
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA!}
+          theme="dark"
+          ref={recaptchaRef}
+          onChange={onChangeRecaptcha}
+          onExpired={onErrorRecaptcha}
+          onError={onErrorRecaptcha}
+        />
+      </div>
       <Submit
         isLoading={isLoading}
-        isDisabled={isInvalid}
+        isDisabled={isInvalid || !isReCAPTCHAToken}
         setLoading={setLoading}
       />
     </form>

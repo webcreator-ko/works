@@ -17,17 +17,27 @@
     @include mq-down(md) {
       margin-top: get_vw(30);
     }
+  }
 
-    dd {
-      margin-top: 5px;
+  dd {
+    margin-top: 10px;
 
-      @include mq-down(md) {
-        margin-top: get_vw(5);
-      }
+    @include mq-down(md) {
+      margin-top: get_vw(10);
     }
   }
 
   .input {
     max-width: 70%;
+  }
+
+  .reCAPTCHAWrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    @include mq-down(md) {
+      margin-top: get_vw(40);
+    }
   }
 }
