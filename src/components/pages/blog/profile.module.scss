@@ -22,8 +22,8 @@
 
   .des {
     margin-top: 15px;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 2;
 
     @include mq-down(md) {
       margin-top: get_vw(15);

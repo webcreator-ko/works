@@ -35,7 +35,10 @@ const Search = ({ defaultSearchText }: Props) => {
   const searchRef = useRef<HTMLInputElement>(null);
   const onClickSearchResult = () => {
     const val = searchRef.current?.value;
-    if (!val) return;
+    if (!val) {
+      window.location.href = '/';
+      return;
+    }
     //   router.push(`/search?p=${val}`);
     //   router.refresh();
 
