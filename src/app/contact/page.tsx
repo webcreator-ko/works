@@ -124,7 +124,7 @@ export default function Page() {
       }
 
       window.alert(
-        'お問い合わせ頂きありがとうございます\nご連絡まで少々お待ちいただけますようお願い申し上げます'
+        'Thank you for your inquiry.\nPlease allow us some time to get back to you.'
       );
       setLoading(false);
     })();
@@ -146,7 +146,7 @@ export default function Page() {
   return (
     <form action={formAction} className={pageStyles.wrap}>
       <dl>
-        <dt>お名前</dt>
+        <dt>Name</dt>
         <dd>
           <InputForm
             name="name"
@@ -159,7 +159,7 @@ export default function Page() {
         </dd>
       </dl>
       <dl>
-        <dt>連絡先アドレス</dt>
+        <dt>Email</dt>
         <dd>
           <InputForm
             name="email"
@@ -173,7 +173,7 @@ export default function Page() {
         </dd>
       </dl>
       <dl>
-        <dt>お問い合わせ内容</dt>
+        <dt>Contents</dt>
         <dd>
           <TextareaForm
             name="description"

@@ -6,11 +6,11 @@ const Profile = () => {
       <h3>WEB CREATOR KO</h3>
 
       <p className={profileStyles.des}>
-        30代から開発エンジニアとしてスタートし、開発4年目
+        I started my career as a web developer in my 30s, specializing in modern
+        development with React and Next.js.
         <br />
-        ReactやNext.jsでのモダン開発を得意とします
-        <br />
-        目標は30代の内に自分でサービスを作り、月50万円の売上を達成する事
+        My goal is to undertake individual projects in my 30s and achieve
+        monthly earnings of over 1 million yen with the services I develop.
       </p>
     </article>
   );
