@@ -37,7 +37,9 @@ const Articles = async ({
 
   if (!data.length && linkType === 'search') {
     return (
-      <p className={articlesStyles.noSearch}>検索結果はありません &#x1f62d;</p>
+      <p className={articlesStyles.noSearch}>
+        No search results found. &#x1f62d;
+      </p>
     );
   }
 
