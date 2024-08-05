@@ -17,7 +17,7 @@ const Submit = ({
   setLoading,
   isDisabled = false,
   className,
-  name = '登録',
+  name = 'Submit',
   onClickHandler,
 }: Props) => {
   const status = useFormStatus();
