@@ -8,11 +8,11 @@ import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | WEB CREATOR KO',
-    default: 'WEB CREATOR KO',
+    template: '%s | WEBCREATOR KO',
+    default: 'WEBCREATOR KO',
   },
   description:
-    'Kotaro from WEB CREATOR is a site where he posts his blog and portfolio, and is currently seeking work opportunities through inquiries!',
+    'KOTARO from WEBCREATOR is a site where he posts his blog and portfolio, and is currently seeking work opportunities through inquiries!',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
   openGraph: {
     url: '/',

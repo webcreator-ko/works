@@ -3,7 +3,7 @@ import profileStyles from './profile.module.scss';
 const Profile = () => {
   return (
     <article className={profileStyles.wrap}>
-      <h3>WEB CREATOR KO</h3>
+      <h3>WEBCREATOR KO</h3>
 
       <p className={profileStyles.des}>
         I started my career as a web developer in my 30s, specializing in modern

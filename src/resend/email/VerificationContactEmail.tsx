@@ -40,7 +40,7 @@ const VerificationContactEmail = ({ name }: Props) => {
             <Row>
               <Text style={global.heading}>
                 <Link href="https://webcreator-ko.pro" style={global.link}>
-                  WEB CREATOR KO
+                  WEBCREATOR KO
                 </Link>
               </Text>
             </Row>
@@ -48,7 +48,7 @@ const VerificationContactEmail = ({ name }: Props) => {
           <Hr style={{ ...global.hr, marginTop: '12px' }} />
           <Section style={paddingY}>
             <Row>
-              <Text style={footer.text}>© WEB CREATOR KO 2024</Text>
+              <Text style={footer.text}>© WEBCREATOR KO 2024</Text>
             </Row>
           </Section>
         </Container>

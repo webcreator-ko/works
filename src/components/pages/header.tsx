@@ -50,7 +50,7 @@ const Header = () => {
     >
       <h1>
         <Link href="/">
-          WEB CREATOR
+          WEBCREATOR
           <br />
           KO
         </Link>
