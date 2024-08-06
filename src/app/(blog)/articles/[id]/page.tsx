@@ -6,8 +6,8 @@ import Articles from '@/components/pages/blog/Articles';
 import ClientArticles from '@/components/pages/blog/ClientArticles';
 import ShareList from '@/components/pages/blog/ShareList';
 import SideBar from '@/components/pages/blog/SideBar';
-import { formatterDate } from '@/libs/dayjs';
-import { fetchComWP } from '@/libs/fetchComWP';
+import { formatterDate } from '@/lib/dayjs';
+import fetchWP from '@/lib/fetchWP';
 import { ArticleDetailType } from '@/types/articleDetailType';
 import { FetchType } from '@/types/fetchType';
 import pageStyles from './page.module.scss';
@@ -15,7 +15,7 @@ import pageStyles from './page.module.scss';
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const { id } = params;
 
-  const { title, content } = await fetchComWP<ArticleDetailType>({
+  const { title, content } = await fetchWP<ArticleDetailType>({
     method: FetchType.Get,
     endpoint: `/posts/${id}?_fields=date,title,content`,
   });
@@ -38,10 +38,12 @@ export default async function Page({ params }: { params: { id: string } }) {
   const articleId = Number(id);
 
   const { date, title, content, categories, x_featured_media_large } =
-    await fetchComWP<ArticleDetailType>({
+    await fetchWP<ArticleDetailType>({
       method: FetchType.Get,
       endpoint: `/posts/${id}?_fields=date,title,content,categories,x_featured_media_large`,
     });
+  console.log(x_featured_media_large);
+  console.log(title);
 
   return (
     <main className={blogStyles.wrap}>
@@ -49,7 +51,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <section className={pageStyles.wrap}>
           <h1 dangerouslySetInnerHTML={{ __html: title.rendered }} />
           <time>{formatterDate(date)}</time>
-          <div className={pageStyles.image}>
+          <div className={pageStyles.imageWrap}>
             <Image
               src={x_featured_media_large}
               sizes="100vw"
@@ -62,7 +64,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           <ShareList
             title={decode(title.rendered)}
             url={`${process.env.NEXT_PUBLIC_SITE_URL}/articles/${id}`}
-            hashTags={['WebCreator_KO']}
+            hashTags={['WEBCREATOR_KO']}
             size={30}
           />
         </section>

@@ -16,11 +16,7 @@ type Props = {
   body?: any;
 };
 
-export const fetchComWP = async <T>({
-  method,
-  endpoint,
-  body,
-}: Props): Promise<T> => {
+const fetchWP = async <T>({ method, endpoint, body }: Props): Promise<T> => {
   const res = await fetch(`${process.env.WP_URL}${endpoint}`, {
     method: method, // GET, POST, PUT, DELETE.
     cache: 'no-cache',
@@ -37,3 +33,5 @@ export const fetchComWP = async <T>({
 
   return res.json();
 };
+
+export default fetchWP;

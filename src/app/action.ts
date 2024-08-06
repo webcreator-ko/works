@@ -1,6 +1,6 @@
 'use server';
 import { DEFAULT_IMPORT_ARTICLES_COUNT } from '@/const/count';
-import { fetchComWP } from '@/libs/fetchComWP';
+import fetchWP from '@/lib/fetchWP';
 import { ArticleType } from '@/types/articleType';
 import { FetchType } from '@/types/fetchType';
 
@@ -11,7 +11,7 @@ type ArticlesProps = {
 
 export async function getArticles({ offset, excludeId }: ArticlesProps) {
   try {
-    const data = await fetchComWP<ArticleType[]>({
+    const data = await fetchWP<ArticleType[]>({
       method: FetchType.Get,
       endpoint: `/posts?per_page=${DEFAULT_IMPORT_ARTICLES_COUNT}&offset=${offset}&exclude=${excludeId}&_fields=id,date,title,content,x_featured_media_large,category_name,category_id`,
     });
@@ -35,7 +35,7 @@ export async function getCategoryArticles({
   categoryId,
 }: CategoryArticlesProps) {
   try {
-    const data = await fetchComWP<ArticleType[]>({
+    const data = await fetchWP<ArticleType[]>({
       method: FetchType.Get,
       endpoint: `/posts?per_page=${DEFAULT_IMPORT_ARTICLES_COUNT}&offset=${offset}&categories=${categoryId}&exclude=${excludeId}&_fields=id,date,title,content,x_featured_media_large,category_name,category_id`,
     });
@@ -59,7 +59,7 @@ export async function getSearchArticles({
   searchText,
 }: SearchArticlesProps) {
   try {
-    const data = await fetchComWP<ArticleType[]>({
+    const data = await fetchWP<ArticleType[]>({
       method: FetchType.Get,
       endpoint: `/posts?per_page=${DEFAULT_IMPORT_ARTICLES_COUNT}&offset=${offset}&search=${searchText}&exclude=${excludeId}&_fields=id,date,title,content,x_featured_media_large,category_name,category_id`,
     });

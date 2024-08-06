@@ -31,14 +31,17 @@
     }
   }
 
-  .image {
+  .imageWrap {
     position: relative;
     display: block;
     width: 100%;
     height: 350px;
     margin-top: 20px;
-    object-fit: cover;
-    object-position: center;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
 
     @include mq-down(md) {
       height: get_vw(200);

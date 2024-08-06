@@ -5,8 +5,8 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import InputForm from '@/components/form/InputForm';
 import Submit from '@/components/form/Submit';
 import TextareaForm from '@/components/form/TextareaForm';
-import { initialState } from '@/libs/form';
-import { zodSchema } from '@/libs/zod';
+import { initialState } from '@/lib/form';
+import { zodSchema } from '@/lib/zod';
 import { postFormData } from './action';
 import pageStyles from './page.module.scss';
 

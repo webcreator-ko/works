@@ -7,7 +7,7 @@ import {
   getSearchArticles,
 } from '@/app/action';
 import { DEFAULT_IMPORT_ARTICLES_COUNT } from '@/const/count';
-import { sleep } from '@/libs/sleep';
+import { sleep } from '@/lib/sleep';
 import { ArticleType } from '@/types/articleType';
 import { LinkType } from '@/types/linkType';
 import Article from './Article';

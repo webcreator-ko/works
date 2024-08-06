@@ -2,7 +2,7 @@ import React from 'react';
 import { decode } from 'html-entities';
 import Image from 'next/image';
 import Link from 'next/link';
-import { formatterDate } from '@/libs/dayjs';
+import { formatterDate } from '@/lib/dayjs';
 import ShareList from './ShareList';
 import articleStyles from './article.module.scss';
 
@@ -52,7 +52,7 @@ const Article = ({
       <ShareList
         title={decode(title)}
         url={`${process.env.NEXT_PUBLIC_SITE_URL}/articles/${id}`}
-        hashTags={['WebCreator_KO']}
+        hashTags={['WEBCREATOR_KO']}
         size={30}
       />
     </article>
