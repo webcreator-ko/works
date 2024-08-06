@@ -2,7 +2,7 @@ import { FetchType } from '@/types/fetchType';
 
 const requestHeaders: HeadersInit = new Headers();
 const buffer = Buffer.from(
-  process.env.WP_USER_NAME + ':' + process.env.WP_PASSWORD_COM,
+  process.env.WP_USER_NAME + ':' + process.env.WP_PASSWORD,
   'utf8'
 );
 const encodedAuthString = buffer.toString('base64');
@@ -21,7 +21,7 @@ export const fetchComWP = async <T>({
   endpoint,
   body,
 }: Props): Promise<T> => {
-  const res = await fetch(`${process.env.WP_COM_URL}${endpoint}`, {
+  const res = await fetch(`${process.env.WP_URL}${endpoint}`, {
     method: method, // GET, POST, PUT, DELETE.
     cache: 'no-cache',
     headers: requestHeaders,
