@@ -1,0 +1,98 @@
+@import '@/styles/index';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60vh;
+  margin-top: 80px;
+
+  @include mq-down(md) {
+    margin-top: get_vw(50);
+  }
+
+  h2 {
+    margin-bottom: 80px;
+    font-family: var(--font-pacifico);
+    font-size: 80px;
+    line-height: 1;
+    text-shadow:
+      0 -10px 50px,
+      0 0 2px,
+      0 0 1em #f44,
+      0 0 0.5em #f44,
+      0 0 0.1em #f44,
+      0 10px 3px var(--dark-color);
+
+    @include mq-down(md) {
+      margin-bottom: get_vw(50);
+      font-size: get_vw(50);
+    }
+
+    span {
+      &:nth-of-type(1) {
+        animation: blink linear infinite 2s;
+      }
+
+      &:nth-of-type(2) {
+        animation: blink linear infinite 3s;
+      }
+
+      &:nth-of-type(3) {
+        animation: blink linear infinite 1s;
+      }
+    }
+  }
+
+  a {
+    font-size: 18px;
+    line-height: 1;
+    text-decoration: underline;
+
+    @include mq-down(md) {
+      font-size: get_vw(14);
+    }
+  }
+}
+
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  79% {
+    color: var(--dark-color);
+  }
+
+  80% {
+    text-shadow: none;
+  }
+
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  82% {
+    color: var(--dark-color);
+    text-shadow: none;
+  }
+
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  92% {
+    color: var(--dark-color);
+    text-shadow: none;
+  }
+
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
