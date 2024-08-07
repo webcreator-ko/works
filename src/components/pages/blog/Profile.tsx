@@ -1,6 +1,9 @@
 import profileStyles from './profile.module.scss';
 
-const Profile = () => {
+const Profile = async () => {
+  // const dict = await getDictionary(lang);
+  // console.log(dict);
+
   return (
     <article className={profileStyles.wrap}>
       <h3>WEBCREATOR KO</h3>
