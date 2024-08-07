@@ -1,8 +1,8 @@
 import '@/app/global.scss';
 import '@/app/tailwind.css';
 import { Pacifico } from 'next/font/google';
-import Header from '@/components/pages/header';
-import Navigation from '@/components/pages/navigation';
+import Header from '@/components/pages/Header';
+import Navigation from '@/components/pages/Navigation';
 import { Providers } from './providers';
 import type { Metadata, Viewport } from 'next';
 

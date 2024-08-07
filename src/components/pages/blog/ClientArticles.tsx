@@ -111,8 +111,6 @@ const ClientArticles = ({
             </li>
           );
         })}
-
-        {/* 追加で取得する記事は、クライアントサイドで取得する */}
       </ul>
       {isLoading && (
         <div className={clientArticlesStyles.loading}>

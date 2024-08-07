@@ -1,5 +1,5 @@
 import React from 'react';
-import Work from '@/components/pages/works/work';
+import Work from '@/components/pages/works/Work';
 import pageStyles from './page.module.scss';
 
 const page = () => {

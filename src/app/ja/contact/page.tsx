@@ -124,7 +124,7 @@ export default function Page() {
       }
 
       window.alert(
-        'Thank you for your inquiry.\nPlease allow us some time to get back to you.'
+        'お問い合わせいただきありがとうございます。\nご返信まで少々お時間をいただきますようお願いいたします。'
       );
       setLoading(false);
     })();

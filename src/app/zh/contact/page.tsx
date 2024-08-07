@@ -123,9 +123,7 @@ export default function Page() {
         return;
       }
 
-      window.alert(
-        'Thank you for your inquiry.\nPlease allow us some time to get back to you.'
-      );
+      window.alert('感谢您的询问。\n请允许我们一些时间来回复您。');
       setLoading(false);
     })();
   }, [state]);
