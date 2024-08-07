@@ -5,7 +5,7 @@ import {
   getArticles,
   getCategoryArticles,
   getSearchArticles,
-} from '@/app/[lang]/action';
+} from '@/app/action';
 import { DEFAULT_IMPORT_ARTICLES_COUNT } from '@/const/count';
 import { sleep } from '@/lib/sleep';
 import { ArticleType } from '@/types/articleType';

@@ -27,7 +27,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "./src/dictionaries/*",
-    "src/app/[lang]/dictionaries.js"
+    "src/app/dictionaries.js"
   ],
   "exclude": ["node_modules"]
 }

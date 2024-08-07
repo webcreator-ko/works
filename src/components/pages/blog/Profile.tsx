@@ -1,20 +1,22 @@
+import { getDictionary } from '@/app/dictionaries';
 import profileStyles from './profile.module.scss';
 
-const Profile = async () => {
-  // const dict = await getDictionary(lang);
-  // console.log(dict);
+type Props = {
+  lang: string;
+};
+
+const Profile = async ({ lang }: Props) => {
+  const { profile } = await getDictionary(lang);
+  console.log(profile);
 
   return (
     <article className={profileStyles.wrap}>
       <h3>WEBCREATOR KO</h3>
 
-      <p className={profileStyles.des}>
-        I started my career as a web developer in my 30s, specializing in modern
-        development with React and Next.js.
-        <br />
-        My goal is to undertake individual projects in my 30s and achieve
-        monthly earnings of over 1 million yen with the services I develop.
-      </p>
+      <p
+        className={profileStyles.des}
+        dangerouslySetInnerHTML={{ __html: profile }}
+      />
     </article>
   );
 };

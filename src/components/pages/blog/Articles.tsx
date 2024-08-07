@@ -2,7 +2,7 @@ import {
   getArticles,
   getCategoryArticles,
   getSearchArticles,
-} from '@/app/[lang]/action';
+} from '@/app/action';
 import { ArticleType } from '@/types/articleType';
 import { LinkType } from '@/types/linkType';
 import Article from './Article';

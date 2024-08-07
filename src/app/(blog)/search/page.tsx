@@ -1,6 +1,6 @@
 import { decode } from 'html-entities';
 import { notFound } from 'next/navigation';
-import blogStyles from '@/app/[lang]/(blog)/blog.module.scss';
+import blogStyles from '@/app/(blog)/blog.module.scss';
 import Articles from '@/components/pages/blog/Articles';
 import ClientArticles from '@/components/pages/blog/ClientArticles';
 
@@ -42,7 +42,7 @@ export default async function Page({
         <ClientArticles linkType="search" searchText={p as string} />
       </div>
       <div className={blogStyles.right}>
-        <SideBar defaultSearchText={p as string} />
+        <SideBar defaultSearchText={p as string} lang="en" />
       </div>
     </main>
   );
