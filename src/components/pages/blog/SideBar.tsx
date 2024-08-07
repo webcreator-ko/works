@@ -3,13 +3,12 @@ import Search from './Search';
 
 type Props = {
   defaultSearchText?: string;
-  lang: string;
 };
 
-const SideBar = ({ defaultSearchText, lang }: Props) => {
+const SideBar = ({ defaultSearchText }: Props) => {
   return (
     <>
-      <Profile lang={lang} />
+      <Profile />
       <Search defaultSearchText={defaultSearchText} />
     </>
   );

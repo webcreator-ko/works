@@ -1,13 +1,8 @@
-import { getDictionary } from '@/app/dictionaries';
+import { useTranslations } from 'next-intl';
 import profileStyles from './profile.module.scss';
 
-type Props = {
-  lang: string;
-};
-
-const Profile = async ({ lang }: Props) => {
-  const { profile } = await getDictionary(lang);
-  console.log(profile);
+const Profile = () => {
+  const t = useTranslations('SideBar');
 
   return (
     <article className={profileStyles.wrap}>
@@ -15,7 +10,7 @@ const Profile = async ({ lang }: Props) => {
 
       <p
         className={profileStyles.des}
-        dangerouslySetInnerHTML={{ __html: profile }}
+        dangerouslySetInnerHTML={{ __html: t('profile') }}
       />
     </article>
   );

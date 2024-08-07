@@ -45,7 +45,6 @@ const ClientArticles = ({
         isArticles.current &&
         !isLoading
       ) {
-        console.log('load');
         setLoading(true);
         await sleep(1000);
 
@@ -81,7 +80,6 @@ const ClientArticles = ({
         }
 
         setLoading(false);
-        console.log('load end');
       }
     };
 

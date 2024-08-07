@@ -8,14 +8,15 @@
       "addWords": true
     }
   ],
-  "dictionaries": ["custom-dictionary"],
   "words": [
     "nextui",
     "tailwindcss",
     "recaptcha",
     "sitekey",
     "WEBCREATOR",
-    "KOTARO"
+    "KOTARO",
+    "formatjs",
+    "localematcher"
   ],
   "ignoreWords": [],
   "import": []

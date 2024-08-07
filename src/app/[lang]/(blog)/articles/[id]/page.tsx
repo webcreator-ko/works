@@ -1,7 +1,7 @@
 import { decode } from 'html-entities';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import blogStyles from '@/app/(blog)/blog.module.scss';
+import blogStyles from '@/app/[lang]/(blog)/blog.module.scss';
 import Articles from '@/components/pages/blog/Articles';
 import ClientArticles from '@/components/pages/blog/ClientArticles';
 import ShareList from '@/components/pages/blog/ShareList';
@@ -42,8 +42,6 @@ export default async function Page({ params }: { params: { id: string } }) {
       method: FetchType.Get,
       endpoint: `/posts/${id}?_fields=date,title,content,categories,x_featured_media_large`,
     });
-  console.log(x_featured_media_large);
-  console.log(title);
 
   return (
     <main className={blogStyles.wrap}>
@@ -80,7 +78,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         />
       </div>
       <div className={blogStyles.right}>
-        <SideBar lang="en" />
+        <SideBar lang="ja" />
       </div>
     </main>
   );

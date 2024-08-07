@@ -1,6 +1,6 @@
 import { decode } from 'html-entities';
 import { notFound } from 'next/navigation';
-import blogStyles from '@/app/(blog)/blog.module.scss';
+import blogStyles from '@/app/[lang]/(blog)/blog.module.scss';
 import Articles from '@/components/pages/blog/Articles';
 import ClientArticles from '@/components/pages/blog/ClientArticles';
 

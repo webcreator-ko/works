@@ -39,11 +39,13 @@ const pacifico = Pacifico({
 
 export default function RootLayout({
   children,
+  params: { lang },
 }: Readonly<{
   children: React.ReactNode;
+  params: { lang: string };
 }>) {
   return (
-    <html lang="ja" className={`${pacifico.variable}`}>
+    <html lang={lang} className={`${pacifico.variable}`}>
       <body>
         <Header />
         <Navigation />
