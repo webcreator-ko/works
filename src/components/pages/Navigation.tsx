@@ -7,6 +7,7 @@ import navigationStyles from './navigation.module.scss';
 const Navigation = () => {
   const navRef = useRef<HTMLElement>(null);
   const [isDisplay, setDisplay] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (navRef.current) {
@@ -84,7 +85,7 @@ const Navigation = () => {
         </li> */}
         <li>
           <Link
-            href="/contact"
+            href={`/contact`}
             className={pathname.includes('contact') ? navigationStyles.on : ''}
           >
             Contact

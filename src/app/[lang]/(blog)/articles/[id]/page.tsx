@@ -78,7 +78,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         />
       </div>
       <div className={blogStyles.right}>
-        <SideBar lang="ja" />
+        <SideBar />
       </div>
     </main>
   );

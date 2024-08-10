@@ -42,7 +42,7 @@ export default async function Page({
         <ClientArticles linkType="search" searchText={p as string} />
       </div>
       <div className={blogStyles.right}>
-        <SideBar defaultSearchText={p as string} lang="ja" />
+        <SideBar defaultSearchText={p as string} />
       </div>
     </main>
   );

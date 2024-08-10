@@ -54,7 +54,6 @@ const Articles = async ({
               id={e.id}
               date={e.date}
               title={e.title.rendered}
-              content={e.content.rendered}
               imageSrc={e.x_featured_media_large}
               contentMaxLength={contentMaxLength}
             />

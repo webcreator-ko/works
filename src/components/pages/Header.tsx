@@ -27,6 +27,7 @@ const Header = () => {
   });
   const backgroundImage = getBackgroundImage(srcSet);
   const pathName = usePathname();
+
   let name = '404';
   if (
     pathName === '/' ||

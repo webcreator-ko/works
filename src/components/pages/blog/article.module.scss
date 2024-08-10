@@ -28,6 +28,8 @@
   }
 
   hgroup {
+    width: 100%;
+
     h1,
     p {
       text-align: left;
@@ -64,13 +66,13 @@
     .image {
       position: relative;
       width: 100%;
-      height: 300px;
+      height: 400px;
       margin-top: 10px;
       border-radius: 10px;
 
       @include mq-down(md) {
         width: 100%;
-        height: get_vw(150);
+        height: get_vw(200);
         margin-top: get_vw(10);
       }
 
@@ -79,6 +81,7 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
+        border-radius: 5px;
       }
     }
   }

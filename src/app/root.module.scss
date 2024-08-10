@@ -1,3 +1,5 @@
+@import '@/styles/index';
+
 :root {
   height: 100%;
 
@@ -11,8 +13,13 @@
   body {
     width: 100%;
     min-height: 100%;
+    padding-bottom: 200px;
     overflow-x: hidden;
     color: var(--white-color);
     background: var(--dark-color);
+
+    @include mq-down(md) {
+      padding-bottom: get_vw(200);
+    }
   }
 }

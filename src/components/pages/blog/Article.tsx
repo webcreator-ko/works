@@ -2,6 +2,7 @@ import React from 'react';
 import { decode } from 'html-entities';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { formatterDate } from '@/lib/dayjs';
 import ShareList from './ShareList';
 import articleStyles from './article.module.scss';
@@ -9,7 +10,7 @@ import articleStyles from './article.module.scss';
 type Props = {
   id: number;
   title: string;
-  content: string;
+  content?: string;
   imageSrc: string;
   date: string;
   contentMaxLength?: number;
@@ -23,19 +24,23 @@ const Article = ({
   date,
   contentMaxLength = 0,
 }: Props) => {
+  const t = useTranslations('Config');
+
   return (
     <article className={articleStyles.wrap}>
-      <Link href={`/articles/${id}`}>
+      <Link href={`/${t('lang')}/articles/${id}`}>
         <hgroup>
           <h1 dangerouslySetInnerHTML={{ __html: title }} />
-          <article
-            dangerouslySetInnerHTML={{
-              __html:
-                contentMaxLength > 0
-                  ? `${content.slice(0, contentMaxLength)}...`
-                  : content,
-            }}
-          />
+          {content && (
+            <article
+              dangerouslySetInnerHTML={{
+                __html:
+                  contentMaxLength > 0
+                    ? `${content.slice(0, contentMaxLength)}...`
+                    : content,
+              }}
+            />
+          )}
           <div className={articleStyles.image}>
             <Image
               src={imageSrc}
