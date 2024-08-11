@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { useFormState } from 'react-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 import InputForm from '@/components/form/InputForm';
@@ -108,6 +109,7 @@ export default function Page() {
 
   const action = postFormData.bind(null, isReCAPTCHAToken);
   const [state, formAction] = useFormState(action, initialState);
+  const t = useTranslations('Contact');
 
   useEffect(() => {
     (async () => {
@@ -123,9 +125,7 @@ export default function Page() {
         return;
       }
 
-      window.alert(
-        'お問い合わせいただきありがとうございます。\nご返信まで少々お時間をいただきますようお願いいたします。'
-      );
+      window.alert(t('reply'));
       setLoading(false);
     })();
   }, [state]);
@@ -142,6 +142,9 @@ export default function Page() {
       setReCAPTCHAToken('');
     }
   };
+
+  console.log('isInvalid', isInvalid);
+  console.log('isReCAPTCHAToken', isReCAPTCHAToken);
 
   return (
     <form action={formAction} className={pageStyles.wrap}>
