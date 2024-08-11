@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 import navigationStyles from './navigation.module.scss';
 
 const Navigation = () => {
@@ -33,7 +33,7 @@ const Navigation = () => {
   }, []);
 
   const pathname = usePathname();
-  const path = usePathname();
+  const { lang } = useParams();
 
   return (
     <nav
@@ -86,7 +86,7 @@ const Navigation = () => {
         </li> */}
         <li>
           <Link
-            href={`${path}/contact`}
+            href={`/${lang}/contact`}
             className={pathname.includes('contact') ? navigationStyles.on : ''}
           >
             Contact
