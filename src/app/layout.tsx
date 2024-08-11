@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     'WEBCREATOR KO  is a site where he shares his blog and portfolio(future), and is currently open to work opportunities through inquiries!',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
-  openGraph: {
-    url: '/',
-    images: '/images/ogp.png',
-  },
-  twitter: {
-    card: 'summary_large_image',
-  },
+  // openGraph: {
+  //   url: '/',
+  //   images: '/images/ogp.png',
+  // },
+  // twitter: {
+  //   card: 'summary_large_image',
+  // },
 };
 
 export const viewport: Viewport = {
