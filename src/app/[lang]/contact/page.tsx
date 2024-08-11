@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { Metadata } from 'next';
 import { useFormState } from 'react-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 import InputForm from '@/components/form/InputForm';
@@ -12,11 +11,6 @@ import { postFormData } from './action';
 import pageStyles from './page.module.scss';
 
 type inputType = 'name' | 'email';
-
-export const metadata: Metadata = {
-  title: 'お問い合わせ',
-  description: 'WEBCREATOR お問い合わせページ',
-};
 
 export default function Page() {
   const [isLoading, setLoading] = useState(false);
