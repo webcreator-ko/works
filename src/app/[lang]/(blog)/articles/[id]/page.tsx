@@ -22,10 +22,15 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
   if (!title) notFound();
 
+  console.log('x_featured_media_large', x_featured_media_large);
+
   return {
     title: decode(title.rendered),
     openGraph: {
-      image: x_featured_media_large,
+      url: x_featured_media_large,
+    },
+    twitter: {
+      card: 'summary_large_image',
     },
   };
 }
