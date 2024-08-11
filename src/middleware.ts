@@ -17,10 +17,15 @@ export function middleware(request: NextRequest) {
   }
 
   const { pathname } = request.nextUrl;
-  const currentLocale = pathname.split('/')[1];
+  // const currentLocale = pathname.split('/')[1];
 
   // 現在のロケールと期待されるロケールが一致しない場合にリダイレクト
-  if (currentLocale !== expectedLocale) {
+  // if (currentLocale !== expectedLocale) {
+  //   return NextResponse.redirect(new URL(`/${expectedLocale}`, request.url));
+  // }
+
+  // "/" へのアクセス時にロケールに基づいてリダイレクト
+  if (pathname === '/') {
     return NextResponse.redirect(new URL(`/${expectedLocale}`, request.url));
   }
 
