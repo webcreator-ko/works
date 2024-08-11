@@ -33,6 +33,7 @@ const Navigation = () => {
   }, []);
 
   const pathname = usePathname();
+  const path = usePathname();
 
   return (
     <nav
@@ -85,7 +86,7 @@ const Navigation = () => {
         </li> */}
         <li>
           <Link
-            href={`/contact`}
+            href={`${path}/contact`}
             className={pathname.includes('contact') ? navigationStyles.on : ''}
           >
             Contact
