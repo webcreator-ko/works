@@ -7,7 +7,6 @@ type Props = {
 
 export const metadata: Metadata = {
   title: 'お問い合わせ',
-  description: 'WEBCREATOR お問い合わせページ',
 };
 
 export default function Layout({ children }: Props) {
