@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: 'WEBCREATOR KO',
   },
   description:
-    'KOTARO from WEBCREATOR is a site where he posts his blog and portfolio, and is currently seeking work opportunities through inquiries!',
+    'WEBCREATOR KO  is a site where he shares his blog and portfolio(future), and is currently open to work opportunities through inquiries!',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
   openGraph: {
     url: '/',
