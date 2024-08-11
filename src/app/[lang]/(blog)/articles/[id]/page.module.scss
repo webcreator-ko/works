@@ -67,27 +67,17 @@
       }
     }
 
-    div {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 40px;
-
-      @include mq-down(md) {
-        gap: get_vw(20);
-        margin-top: get_vw(40);
-      }
-    }
-
     img {
       display: inline-flex;
-      width: 320px;
+      width: 100%;
+      padding-top: 10px;
       object-fit: cover;
       object-position: center;
       border-radius: 5px;
 
       @include mq-down(md) {
         width: 100%;
+        padding-top: get_vw(10);
       }
 
       &:nth-of-type(2n) {
@@ -98,7 +88,7 @@
         margin-top: 30px;
 
         @include mq-down(md) {
-          margin-top: get_vw(39);
+          margin-top: get_vw(30);
         }
       }
     }
