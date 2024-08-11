@@ -143,9 +143,6 @@ export default function Page() {
     }
   };
 
-  console.log('isInvalid', isInvalid);
-  console.log('isReCAPTCHAToken', isReCAPTCHAToken);
-
   return (
     <form action={formAction} className={pageStyles.wrap}>
       <dl>
