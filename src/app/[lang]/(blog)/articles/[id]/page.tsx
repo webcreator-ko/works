@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   return {
     title: decode(title.rendered),
     openGraph: {
-      url: x_featured_media_large,
+      images: [x_featured_media_large],
     },
     twitter: {
       card: 'summary_large_image',
