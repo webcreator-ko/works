@@ -56,7 +56,7 @@ const ClientArticles = ({
             categoryId,
           });
         }
-        if (linkType === 'categories' && categoryId) {
+        if (linkType === 'categories') {
           newData = await getCategoryArticles({
             offset: offsetRef.current,
             excludeId,

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { useParams } from 'next/navigation';
 import { SP_WIDTH } from '@/const/size';
 import searchStyles from './search.module.scss';
 
@@ -10,6 +11,7 @@ type Props = {
 
 const Search = ({ defaultSearchText }: Props) => {
   const [isDisplaySearch, setDisplaySearch] = useState(true);
+  const { lang } = useParams();
 
   // スクロール検知
   useEffect(() => {
@@ -42,7 +44,7 @@ const Search = ({ defaultSearchText }: Props) => {
     //   router.push(`/search?p=${val}`);
     //   router.refresh();
 
-    window.location.href = `/search?p=${val}`;
+    window.location.href = `/${lang}/search?p=${val}`;
   };
 
   return (

@@ -15,16 +15,20 @@ import pageStyles from './page.module.scss';
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const { id } = params;
 
-  const { title, content } = await fetchWP<ArticleDetailType>({
-    method: FetchType.Get,
-    endpoint: `/posts/${id}?_fields=date,title,content`,
-  });
+  const { title, content, x_featured_media_large } =
+    await fetchWP<ArticleDetailType>({
+      method: FetchType.Get,
+      endpoint: `/posts/${id}?_fields=date,title,content,x_featured_media_large`,
+    });
 
   if (!title || !content) notFound();
 
   const meta = {
     title: decode(title.rendered),
     des: decode(content.rendered),
+    openGraph: {
+      image: x_featured_media_large,
+    },
   };
 
   return {
