@@ -1,6 +1,7 @@
 {
   "Config": {
-    "lang": "en"
+    "lang": "en",
+    "categoryId": "2"
   },
   "SideBar": {
     "profile": "I started my career as a web developer in my 30s, specializing in modern\ndevelopment with React and Next.js.\n<br />\nMy goal is to undertake individual projects in my 30s and achieve\nmonthly earnings of over 1 million yen with the services I develop."

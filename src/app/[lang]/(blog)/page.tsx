@@ -1,14 +1,18 @@
+import { useTranslations } from 'next-intl';
 import blogStyles from '@/app/[lang]/(blog)/blog.module.scss';
 import Articles from '@/components/pages/blog/Articles';
 import ClientArticles from '@/components/pages/blog/ClientArticles';
 import SideBar from '@/components/pages/blog/SideBar';
 
 export default function Home() {
+  const t = useTranslations('Config');
+  const categoryId = Number(t('categoryId'));
+
   return (
     <main className={blogStyles.wrap}>
       <div className={blogStyles.left}>
-        <Articles linkType="articles" />
-        <ClientArticles linkType="articles" />
+        <Articles linkType="articles" categoryId={categoryId} />
+        <ClientArticles linkType="articles" categoryId={categoryId} />
       </div>
       <div className={blogStyles.right}>
         <SideBar />

@@ -16,16 +16,16 @@ import clientArticlesStyles from './client-articles.module.scss';
 
 type Props = {
   linkType: LinkType;
+  categoryId: number;
   excludeId?: number;
-  categoryId?: number;
   searchText?: string;
   contentMaxLength?: number;
 };
 
 const ClientArticles = ({
   linkType,
-  excludeId = 0,
   categoryId,
+  excludeId = 0,
   searchText,
   contentMaxLength = 250,
 }: Props) => {
@@ -53,6 +53,7 @@ const ClientArticles = ({
           newData = await getArticles({
             offset: offsetRef.current,
             excludeId,
+            categoryId,
           });
         }
         if (linkType === 'categories' && categoryId) {
@@ -67,6 +68,7 @@ const ClientArticles = ({
             offset: offsetRef.current,
             excludeId,
             searchText,
+            categoryId,
           });
         }
 

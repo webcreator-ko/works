@@ -10,29 +10,39 @@ import articlesStyles from './articles.module.scss';
 
 type Props = {
   linkType: LinkType;
+  categoryId: number;
+
   excludeId?: number;
-  categoryId?: number;
   searchText?: string;
   contentMaxLength?: number;
 };
 
 const Articles = async ({
   linkType,
-  excludeId = 0,
   categoryId,
+  excludeId = 0,
   searchText,
   contentMaxLength = 250,
 }: Props) => {
   let data: ArticleType[] = [];
 
   if (linkType === 'articles') {
-    data = await getArticles({ offset: 0, excludeId });
+    data = await getArticles({
+      offset: 0,
+      excludeId,
+      categoryId,
+    });
   }
-  if (linkType === 'categories' && categoryId) {
+  if (linkType === 'categories') {
     data = await getCategoryArticles({ offset: 0, excludeId, categoryId });
   }
   if (linkType === 'search' && searchText) {
-    data = await getSearchArticles({ offset: 0, excludeId, searchText });
+    data = await getSearchArticles({
+      offset: 0,
+      excludeId,
+      searchText,
+      categoryId,
+    });
   }
 
   if (!data.length && linkType === 'search') {
