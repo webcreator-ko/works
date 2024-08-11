@@ -8,23 +8,22 @@ const intlMiddleware = createMiddleware({
 
 export function middleware(request: NextRequest) {
   const geo = request.geo;
-  console.log('geo', geo);
-  let locale = 'en';
+  let expectedLocale = 'en';
 
   if (geo?.country === 'JP') {
-    locale = 'ja';
+    expectedLocale = 'ja';
   } else if (geo?.country === 'CN') {
-    locale = 'zh';
+    expectedLocale = 'zh';
   }
 
-  const pathname = request.nextUrl.pathname;
+  const { pathname } = request.nextUrl;
+  const currentLocale = pathname.split('/')[1];
 
-  // "/" へのアクセス時にロケールに基づいてリダイレクト
-  if (pathname === '/') {
-    return NextResponse.redirect(new URL(`/${locale}`, request.url));
+  // 現在のロケールと期待されるロケールが一致しない場合にリダイレクト
+  if (currentLocale !== expectedLocale) {
+    return NextResponse.redirect(new URL(`/${expectedLocale}`, request.url));
   }
 
-  // それ以外は intlMiddleware を適用
   return intlMiddleware(request) || NextResponse.next();
 }
 
