@@ -27,5 +27,6 @@
     "scss"
   ],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+  "i18n-ally.localesPaths": ["messages"]
 }

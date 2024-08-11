@@ -18,7 +18,7 @@ export function generateStaticParams() {
 }
 
 export default async function Layout({ children, params: { lang } }: Props) {
-  console.log('lang', lang);
+  console.log('lang2', lang);
   unstable_setRequestLocale(lang);
 
   const messages = await getMessages();
