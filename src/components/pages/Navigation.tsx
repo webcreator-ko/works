@@ -11,13 +11,12 @@ const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (navRef.current) {
-        const navRect = navRef.current?.getBoundingClientRect();
         const headerRect = document
           .getElementById('header')
           ?.getBoundingClientRect();
         if (!headerRect) return;
 
-        if (navRect.top <= 0 && headerRect.bottom < 0) {
+        if (headerRect.bottom < 0) {
           setDisplay(true);
         } else {
           setDisplay(false);

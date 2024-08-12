@@ -11,7 +11,7 @@
   background-size: cover;
 
   @include mq-down(md) {
-    height: get_vw(159);
+    height: get_vw(200);
   }
 
   h1 {
@@ -38,6 +38,10 @@
   justify-content: center;
   height: 100%;
 
+  @include mq-down(md) {
+    display: none;
+  }
+
   .rect {
     position: absolute;
     inset: 0;
@@ -47,10 +51,6 @@
     font-size: 70px;
     opacity: 0.1;
     writing-mode: vertical-rl;
-
-    @include mq-down(md) {
-      font-size: get_vw(30);
-    }
   }
 }
 
