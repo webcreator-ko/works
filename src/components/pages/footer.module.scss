@@ -1,0 +1,20 @@
+@import '@/styles/index';
+
+.wrap {
+  margin-top: 80px;
+  text-align: center;
+
+  @include mq-down(md) {
+    margin-top: get_vw(80);
+  }
+
+  small {
+    font-size: 14px;
+    line-height: 1;
+    color: var(--white-color);
+
+    @include mq-down(md) {
+      font-size: get_vw(14);
+    }
+  }
+}

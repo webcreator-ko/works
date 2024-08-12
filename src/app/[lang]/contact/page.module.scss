@@ -2,12 +2,10 @@
 
 .wrap {
   max-width: 600px;
-  padding-bottom: 120px;
   margin: 60px auto 0;
 
   @include mq-down(md) {
     max-width: 90%;
-    padding-bottom: get_vw(120);
     margin: get_vw(60) auto 0;
   }
 

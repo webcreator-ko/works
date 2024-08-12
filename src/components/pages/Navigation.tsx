@@ -47,7 +47,7 @@ const Navigation = () => {
       <ul>
         <li>
           <Link
-            href="/"
+            href={`/${lang}`}
             className={
               !pathname.includes('works') &&
               !pathname.includes('gallery') &&
@@ -67,22 +67,6 @@ const Navigation = () => {
             BlueSky
           </a>
         </li>
-        {/* <li>
-          <Link
-            href="/works"
-            className={pathname.includes('works') ? navigationStyles.on : ''}
-          >
-            Works
-          </Link>
-        </li> */}
-        {/* <li>
-          <Link
-            href="/gallery"
-            className={pathname.includes('gallery') ? navigationStyles.on : ''}
-          >
-            Gallery
-          </Link>
-        </li> */}
         <li>
           <Link
             href={`/${lang}/contact`}

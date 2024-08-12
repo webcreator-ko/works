@@ -4,6 +4,7 @@ import { Pacifico } from 'next/font/google';
 import Head from 'next/head';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
+import Footer from '@/components/pages/Footer';
 import Header from '@/components/pages/Header';
 import Langs from '@/components/pages/Langs';
 import Navigation from '@/components/pages/Navigation';
@@ -68,6 +69,7 @@ export default async function Layout({ children, params: { lang } }: Props) {
         <NextIntlClientProvider messages={messages}>
           <Providers>{children}</Providers>
         </NextIntlClientProvider>
+        <Footer />
       </body>
     </html>
   );
