@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { decode } from 'html-entities';
 import { Pacifico } from 'next/font/google';
 import Head from 'next/head';
 import { NextIntlClientProvider } from 'next-intl';
@@ -24,7 +25,7 @@ export async function generateMetadata({
   }
 
   return {
-    description,
+    description: decode(description),
   };
 }
 
