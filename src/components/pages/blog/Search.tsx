@@ -15,23 +15,20 @@ const Search = ({ defaultSearchText }: Props) => {
 
   // スクロール検知
   useEffect(() => {
+    let isScrolling: NodeJS.Timeout;
+
     const handleScroll = () => {
-      // SP時のみ
       if (window.innerWidth < SP_WIDTH) {
         setDisplaySearch(false);
       }
-    };
 
-    const handleScrollEnd = () => {
-      setDisplaySearch(true);
+      clearTimeout(isScrolling);
+      isScrolling = setTimeout(() => {
+        setDisplaySearch(true);
+      }, 150); // 150msはスクロール終了と見なす
     };
 
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('scrollend', handleScrollEnd);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('scrollend', handleScrollEnd);
-    };
   }, []);
 
   const searchRef = useRef<HTMLInputElement>(null);

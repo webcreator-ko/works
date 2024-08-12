@@ -9,7 +9,7 @@
 
   @include mq-down(md) {
     flex-direction: column;
-    padding: 0 get_vw(20);
+    padding: 0 get_vw(15);
   }
 
   .left {
