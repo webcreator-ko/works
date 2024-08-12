@@ -56,7 +56,7 @@ const Article = ({
       <time dateTime={date}>{formatterDate(date)}</time>
       <ShareList
         title={decode(title)}
-        url={`${process.env.NEXT_PUBLIC_SITE_URL}/articles/${id}`}
+        url={`${process.env.NEXT_PUBLIC_SITE_URL}/${t('lang')}/articles/${id}`}
         hashTags={['WEBCREATOR_KO']}
         size={30}
       />
