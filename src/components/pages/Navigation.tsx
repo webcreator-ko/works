@@ -69,7 +69,7 @@ const Navigation = () => {
         </li>
         <li>
           <Link
-            href={`/${lang}/contact`}
+            href={`/contact`}
             className={pathname.includes('contact') ? navigationStyles.on : ''}
           >
             Contact
