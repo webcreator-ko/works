@@ -1,5 +1,6 @@
 import '@/app/global.scss';
 import '@/app/tailwind.css';
+import '/node_modules/flag-icons/css/flag-icons.min.css';
 
 import type { Metadata, Viewport } from 'next';
 

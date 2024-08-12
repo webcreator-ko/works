@@ -1,0 +1,25 @@
+@import '@/styles/index';
+
+.wrap {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
+
+  @include mq-down(md) {
+    gap: get_vw(50);
+  }
+
+  span {
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+
+    @include mq-down(md) {
+      width: get_vw(30);
+      height: get_vw(30);
+    }
+  }
+}
