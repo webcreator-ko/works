@@ -14,6 +14,7 @@ import pageStyles from './page.module.scss';
 type inputType = 'name' | 'email';
 
 export default function Page() {
+  const t = useTranslations('Contact');
   const [isLoading, setLoading] = useState(false);
   const [isInvalid, setIsInvalid] = useState(true);
   const [formData, setFormData] = useState({
@@ -109,7 +110,6 @@ export default function Page() {
 
   const action = postFormData.bind(null, isReCAPTCHAToken);
   const [state, formAction] = useFormState(action, initialState);
-  const t = useTranslations('Contact');
 
   useEffect(() => {
     (async () => {
@@ -146,7 +146,7 @@ export default function Page() {
   return (
     <form action={formAction} className={pageStyles.wrap}>
       <dl>
-        <dt>Name</dt>
+        <dt>{t('form.name')}</dt>
         <dd>
           <InputForm
             name="name"
@@ -159,7 +159,7 @@ export default function Page() {
         </dd>
       </dl>
       <dl>
-        <dt>Email</dt>
+        <dt>{t('form.email')}</dt>
         <dd>
           <InputForm
             name="email"
@@ -173,7 +173,7 @@ export default function Page() {
         </dd>
       </dl>
       <dl>
-        <dt>Contents</dt>
+        <dt>{t('form.message')}</dt>
         <dd>
           <TextareaForm
             name="description"

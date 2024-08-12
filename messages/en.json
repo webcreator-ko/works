@@ -1,6 +1,5 @@
 {
   "Config": {
-    "lang": "en",
     "categoryId": "2"
   },
   "SideBar": {
@@ -8,6 +7,11 @@
   },
   "Contact": {
     "replyMessage": "Thank you for your inquiry.\nPlease allow us some time to respond.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
+    },
     "confirm": {
       "title": "Thank you for your inquiry to WebCreator Ko.",
       "message": "Dear {name},<br />Thank you for your inquiry.<br />Please allow us some time to respond.<br /><br />We will get back to you with a detailed response as soon as possible, so please wait a little.<br /><br />Please note that this email is automatically sent, and we are unable to respond to any replies.<br />Thank you for your understanding."

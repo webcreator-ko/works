@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import { getImageProps } from 'next/image';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Link } from '@/navigation';
 import headerStyles from './header.module.scss';
 
 function getBackgroundImage(srcSet = '') {

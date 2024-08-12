@@ -1,7 +1,7 @@
 import { decode } from 'html-entities';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getLocale } from 'next-intl/server';
 import blogStyles from '@/app/[lang]/(blog)/blog.module.scss';
 import Articles from '@/components/pages/blog/Articles';
 import ClientArticles from '@/components/pages/blog/ClientArticles';
@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params;
   const articleId = Number(id);
 
-  const t = await getTranslations('Config');
+  const locale = await getLocale();
 
   const { date, title, content, categories, x_featured_media_large } =
     await fetchWP<ArticleDetailType>({
@@ -64,7 +64,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           <article dangerouslySetInnerHTML={{ __html: content.rendered }} />
           <ShareList
             title={decode(title.rendered)}
-            url={`${process.env.NEXT_PUBLIC_SITE_URL}/${t('lang')}/articles/${id}`}
+            url={`${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/articles/${id}`}
             hashTags={['WEBCREATOR_KO']}
             size={30}
           />

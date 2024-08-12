@@ -1,6 +1,5 @@
 {
   "Config": {
-    "lang": "zh",
     "categoryId": "3"
   },
   "SideBar": {
@@ -8,6 +7,11 @@
   },
   "Contact": {
     "replyMessage": "感谢您的咨询。\n我们可能需要一些时间来回复、敬请谅解。",
+    "form": {
+      "name": "名字",
+      "email": "邮箱",
+      "message": "留言内容"
+    },
     "confirm": {
       "title": "感谢您联系WebCreator Ko",
       "message": "尊敬的{name}，感谢您的咨询。<br /><br />我们将尽快为您准备详细的回复，敬请耐心等待。<br /><br />请注意，此邮件为自动发送，因此无法直接回复此邮件。<br />感谢您的理解与配合。"

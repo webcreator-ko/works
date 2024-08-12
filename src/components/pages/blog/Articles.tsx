@@ -1,3 +1,4 @@
+import { getLocale } from 'next-intl/server';
 import {
   getArticles,
   getCategoryArticles,
@@ -25,6 +26,7 @@ const Articles = async ({
   contentMaxLength = 250,
 }: Props) => {
   let data: ArticleType[] = [];
+  const local = await getLocale();
 
   if (linkType === 'articles') {
     data = await getArticles({
@@ -62,6 +64,7 @@ const Articles = async ({
           <li key={e.id}>
             <Article
               id={e.id}
+              lang={local}
               date={e.date}
               title={e.title.rendered}
               imageSrc={e.x_featured_media_large}

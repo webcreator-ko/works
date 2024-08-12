@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import notFoundStyles from './notFound.module.scss';
 
 const NotFound = () => {

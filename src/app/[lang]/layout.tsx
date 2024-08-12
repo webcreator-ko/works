@@ -6,7 +6,6 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import Footer from '@/components/pages/Footer';
 import Header from '@/components/pages/Header';
-import Langs from '@/components/pages/Langs';
 import Navigation from '@/components/pages/Navigation';
 import { Providers } from '../providers';
 
@@ -63,13 +62,12 @@ export default async function Layout({ children, params: { lang } }: Props) {
         <meta http-equiv="Content-Language" content="ja, zh, en" />
       </Head>
       <body>
-        <Header />
-        <Navigation />
-        <Langs />
         <NextIntlClientProvider messages={messages}>
+          <Header />
+          <Navigation />
           <Providers>{children}</Providers>
+          <Footer />
         </NextIntlClientProvider>
-        <Footer />
       </body>
     </html>
   );

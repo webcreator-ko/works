@@ -1,14 +1,14 @@
 import React from 'react';
 import { decode } from 'html-entities';
 import Image from 'next/image';
-import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 import { formatterDate } from '@/lib/dayjs';
+import { Link } from '@/navigation';
 import ShareList from './ShareList';
 import articleStyles from './article.module.scss';
 
 type Props = {
   id: number;
+  lang: string;
   title: string;
   content?: string;
   imageSrc: string;
@@ -18,17 +18,16 @@ type Props = {
 
 const Article = ({
   id,
+  lang,
   title,
   content,
   imageSrc,
   date,
   contentMaxLength = 0,
 }: Props) => {
-  const t = useTranslations('Config');
-
   return (
     <article className={articleStyles.wrap}>
-      <Link href={`/${t('lang')}/articles/${id}`}>
+      <Link href={`/articles/${id}`}>
         <hgroup>
           <h1 dangerouslySetInnerHTML={{ __html: title }} />
           {content && (
@@ -56,7 +55,7 @@ const Article = ({
       <time dateTime={date}>{formatterDate(date)}</time>
       <ShareList
         title={decode(title)}
-        url={`${process.env.NEXT_PUBLIC_SITE_URL}/${t('lang')}/articles/${id}`}
+        url={`${process.env.NEXT_PUBLIC_SITE_URL}/${lang}/articles/${id}`}
         hashTags={['WEBCREATOR_KO']}
         size={30}
       />

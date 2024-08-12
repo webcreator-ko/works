@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
+import { useLocale } from 'next-intl';
 import ReactLoading from 'react-loading';
 import {
   getArticles,
@@ -32,6 +33,7 @@ const ClientArticles = ({
   const [data, setData] = useState<ArticleType[]>([]);
   const [isLoading, setLoading] = useState(false);
   const isArticles = useRef(true);
+  const local = useLocale();
 
   const offsetRef = useRef(DEFAULT_IMPORT_ARTICLES_COUNT);
 
@@ -102,6 +104,7 @@ const ClientArticles = ({
             <li key={e.id} id={i === data.length - 1 ? 'lastItem' : undefined}>
               <Article
                 id={e.id}
+                lang={local}
                 date={e.date}
                 title={e.title.rendered}
                 imageSrc={e.x_featured_media_large}
