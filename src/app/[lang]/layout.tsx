@@ -1,6 +1,11 @@
 import { ReactNode } from 'react';
+import { Pacifico } from 'next/font/google';
+import Head from 'next/head';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
+import Header from '@/components/pages/Header';
+import Navigation from '@/components/pages/Navigation';
+import { Providers } from '../providers';
 
 export async function generateMetadata({
   params,
@@ -38,14 +43,29 @@ export function generateStaticParams() {
   return langs.map((lang) => ({ lang }));
 }
 
+const pacifico = Pacifico({
+  weight: '400',
+  variable: '--font-pacifico',
+  subsets: ['latin'],
+});
+
 export default async function Layout({ children, params: { lang } }: Props) {
   unstable_setRequestLocale(lang);
 
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <html lang={lang} className={`${pacifico.variable}`}>
+      <Head>
+        <meta http-equiv="Content-Language" content="ja, zh, en" />
+      </Head>
+      <body>
+        <Header />
+        <Navigation />
+        <NextIntlClientProvider messages={messages}>
+          <Providers>{children}</Providers>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
