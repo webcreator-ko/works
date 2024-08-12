@@ -7,7 +7,11 @@
   width: 100%;
 
   @include mq-down(md) {
-    gap: get_vw(50);
+    gap: get_vw(30);
+  }
+
+  a.on {
+    opacity: 0.2;
   }
 
   span {
