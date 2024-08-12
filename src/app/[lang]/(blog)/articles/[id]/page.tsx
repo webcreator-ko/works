@@ -22,8 +22,6 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
   if (!title) notFound();
 
-  console.log('x_featured_media_large', x_featured_media_large);
-
   return {
     title: decode(title.rendered),
     openGraph: {

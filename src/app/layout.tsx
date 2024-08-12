@@ -1,6 +1,8 @@
 import '@/app/global.scss';
 import '@/app/tailwind.css';
 import { Pacifico } from 'next/font/google';
+import Head from 'next/head';
+import { getTranslations } from 'next-intl/server';
 import Header from '@/components/pages/Header';
 import Navigation from '@/components/pages/Navigation';
 import { Providers } from './providers';
@@ -11,8 +13,6 @@ export const metadata: Metadata = {
     template: '%s | WEBCREATOR KO',
     default: 'WEBCREATOR KO',
   },
-  description:
-    'WEBCREATOR KO  is a site where he shares his blog and portfolio(future), and is currently open to work opportunities through inquiries!',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
   // openGraph: {
   //   url: '/',
@@ -37,15 +37,18 @@ const pacifico = Pacifico({
   subsets: ['latin'],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { lang },
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: string };
 }>) {
+  const t = await getTranslations('Config');
+
   return (
-    <html lang={lang} className={`${pacifico.variable}`}>
+    <html lang={t('lang')} className={`${pacifico.variable}`}>
+      <Head>
+        <meta http-equiv="Content-Language" content="ja, zh, en" />
+      </Head>
       <body>
         <Header />
         <Navigation />

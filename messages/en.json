@@ -7,6 +7,10 @@
     "profile": "I started my career as a web developer in my 30s, specializing in modern\ndevelopment with React and Next.js.\n<br />\nMy goal is to undertake individual projects in my 30s and achieve\nmonthly earnings of over 1 million yen with the services I develop."
   },
   "Contact": {
-    "reply": "Thank you for your inquiry.\nPlease allow us some time to respond."
+    "replyMessage": "Thank you for your inquiry.\nPlease allow us some time to respond.",
+    "confirm": {
+      "title": "Thank you for your inquiry to WebCreator Ko.",
+      "message": "Dear {name},<br />Thank you for your inquiry.<br />Please allow us some time to respond.<br /><br />We will get back to you with a detailed response as soon as possible, so please wait a little.<br /><br />Please note that this email is automatically sent, and we are unable to respond to any replies.<br />Thank you for your understanding."
+    }
   }
 }

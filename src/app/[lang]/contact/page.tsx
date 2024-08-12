@@ -125,7 +125,7 @@ export default function Page() {
         return;
       }
 
-      window.alert(t('reply'));
+      window.alert(t('replyMessage'));
       setLoading(false);
     })();
   }, [state]);

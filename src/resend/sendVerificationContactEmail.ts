@@ -1,5 +1,6 @@
 'use server';
 
+import { getTranslations } from 'next-intl/server';
 import { resend } from './config';
 import VerificationContactEmail from './email/VerificationContactEmail';
 
@@ -9,15 +10,18 @@ type Props = {
 };
 
 const sendVerificationContactEmail = async ({ name, email }: Props) => {
+  const t = await getTranslations('Contact');
+  const title = t('confirm.title');
+  const messageContent = t('confirm.message', { name });
   const emailTemplate = VerificationContactEmail({
-    name,
+    messageContent,
   });
 
   try {
     await resend.emails.send({
       from: process.env.EMAIL_FROM!,
       to: email,
-      subject: '【WebCreator Ko】お問い合わせ内容頂きありがとうございます。',
+      subject: title,
       react: emailTemplate,
     });
   } catch (error) {

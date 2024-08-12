@@ -11,10 +11,10 @@ import {
 } from '@react-email/components';
 
 type Props = {
-  name: string;
+  messageContent: string;
 };
 
-const VerificationContactEmail = ({ name }: Props) => {
+const VerificationContactEmail = ({ messageContent }: Props) => {
   return (
     <Html>
       <Head />
@@ -22,18 +22,7 @@ const VerificationContactEmail = ({ name }: Props) => {
         <Container style={container}>
           <Hr style={global.hr} />
           <Section style={message}>
-            <Text>
-              {name}様<br />
-              この度は、お問い合わせ頂き誠にありがとうございます。
-              <br />
-              <br />
-              詳細な回答が準備でき次第、改めてご連絡させていただきますので、少々お待ちいただけますようお願い申し上げます。
-              <br />
-              <br />
-              なお、本メールは自動送信されておりますので、直接ご返信いただいてもお答えすることができません。
-              <br />
-              何卒ご了承ください。 どうぞよろしくお願い申し上げます。
-            </Text>
+            <Text dangerouslySetInnerHTML={{ __html: messageContent }} />
           </Section>
           <Hr style={global.hr} />
           <Section style={paddingY}>
