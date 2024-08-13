@@ -47,7 +47,9 @@ const Navigation = () => {
           <Link
             href="/"
             className={
-              pathname === '/' || pathname.includes('/articles')
+              pathname === '/' ||
+              pathname.includes('/articles') ||
+              pathname.includes('/search')
                 ? navigationStyles.on
                 : ''
             }
