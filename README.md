@@ -1,7 +1,7 @@
 # WEBCREATOR KO
 
 [Next.js](https://nextjs.org/) を使用したプロジェクトです<br />
-ディレクトリ構造やファイル名などは Next.js の仕様に準じます
+ディレクトリ構造やファイル名などは React/Next.js の仕様に準じます
 
 ## 開発サーバーを起動
 
