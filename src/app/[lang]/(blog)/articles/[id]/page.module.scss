@@ -60,10 +60,10 @@
     }
 
     p {
-      margin-top: 10px;
+      margin-top: 20px;
 
       @include mq-down(md) {
-        margin-top: get_vw(10);
+        margin-top: get_vw(20);
       }
     }
 
@@ -82,14 +82,6 @@
 
       &:nth-of-type(2n) {
         margin-left: auto;
-      }
-
-      & + p {
-        margin-top: 30px;
-
-        @include mq-down(md) {
-          margin-top: get_vw(30);
-        }
       }
     }
   }

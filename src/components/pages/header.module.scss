@@ -33,31 +33,11 @@
   }
 }
 
-.leftFixed {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-
-  @include mq-down(md) {
-    display: none;
-  }
-
-  .rect {
-    position: absolute;
-    inset: 0;
-    top: 0;
-    left: 0;
-    z-index: 50;
-    font-size: 70px;
-    opacity: 0.1;
-    writing-mode: vertical-rl;
-  }
-}
-
 .rect {
   position: absolute;
   inset: 0;
   z-index: 50;
+  display: none;
   width: 700px;
   height: 300px;
   margin: auto;
