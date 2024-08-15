@@ -24,3 +24,6 @@ v20.16.0 (2024/8)
    ・Default Formatter が Prettier になってること<br />
    ・Format on Save にチェックが入っていること
    ![VSCodeのPrettier設定画像](./docs/images/prettier_vscode.png)
+
+## CMS
+使用している CMS は WordPress で、Headless にして連携を行なってます。
