@@ -1,14 +1,18 @@
 import { ReactNode } from 'react';
-import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import Langs from '@/components/pages/Langs';
 
 type Props = {
   children: ReactNode;
 };
 
-export const metadata: Metadata = {
-  title: 'お問い合わせ',
-};
+export async function generateMetadata() {
+  const t = await getTranslations('Contact');
+
+  return {
+    title: t('title'),
+  };
+}
 
 export default function Layout({ children }: Props) {
   return (
