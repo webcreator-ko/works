@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { SP_WIDTH } from '@/const/size';
 import searchStyles from './search.module.scss';
 
 type Props = {
@@ -18,10 +17,6 @@ const Search = ({ defaultSearchText }: Props) => {
     let isScrolling: NodeJS.Timeout;
 
     const handleScroll = () => {
-      if (window.innerWidth < SP_WIDTH) {
-        setDisplaySearch(false);
-      }
-
       clearTimeout(isScrolling);
       isScrolling = setTimeout(() => {
         setDisplaySearch(true);

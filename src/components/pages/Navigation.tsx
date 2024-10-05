@@ -57,14 +57,14 @@ const Navigation = () => {
             Diary
           </Link>
         </li>
-        <li>
+        {/* <li>
           <a
             href="https://bsky.app/profile/webcreator-ko.bsky.social"
             target="_blank"
           >
             BlueSky
           </a>
-        </li>
+        </li> */}
         <li>
           <Link
             href="/contact"
