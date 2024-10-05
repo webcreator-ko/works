@@ -60,10 +60,18 @@
     }
 
     p {
-      margin-top: 20px;
+      margin-top: 40px;
+
+      &:first-of-type {
+        margin-top: 20px;
+      }
 
       @include mq-down(md) {
-        margin-top: get_vw(20);
+        &:first-of-type {
+          margin-top: get_vw(20);
+        }
+
+        margin-top: get_vw(40);
       }
     }
 
