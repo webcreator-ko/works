@@ -8,7 +8,6 @@ import {
   getSearchArticles,
 } from '@/app/action';
 import { DEFAULT_IMPORT_ARTICLES_COUNT } from '@/const/count';
-import { sleep } from '@/lib/sleep';
 import { ArticleType } from '@/types/articleType';
 import { LinkType } from '@/types/linkType';
 import Article from './Article';
@@ -48,7 +47,6 @@ const ClientArticles = ({
         !isLoading
       ) {
         setLoading(true);
-        await sleep(1000);
 
         let newData: ArticleType[] = [];
         if (linkType === 'articles') {
